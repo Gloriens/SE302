@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<ScrollPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.syllabusmanager.CreateSyllabusController">
    <content>
    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="2500.0" prefWidth="1290.0" style="-fx-background-radius: 30; -fx-border-radius: 30; -fx-background-color: #f8f4fc;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
       <children>
@@ -394,7 +394,7 @@
                                           </Text>
                                           <TextArea fx:id="subjects5_TextF_WeeklySub" prefHeight="40.0" prefWidth="215.0" />
                                           <Pane prefHeight="40.0" prefWidth="19.0" />
-                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                          <TextArea fx:id="RequiredM5_TextF_WeeklySub" prefHeight="40.0" prefWidth="297.0" />
                                        </children>
                                     </HBox>
                                     <Pane prefHeight="10.0" prefWidth="51.0" />
@@ -410,7 +410,7 @@
                                           </Text>
                                           <TextArea fx:id="subjects6_TextF_WeeklySub" prefHeight="40.0" prefWidth="215.0" />
                                           <Pane prefHeight="40.0" prefWidth="19.0" />
-                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                          <TextArea fx:id="RequiredM6_TextF_WeeklySub" prefHeight="40.0" prefWidth="297.0" />
                                        </children>
                                     </HBox>
                                     <Pane prefHeight="10.0" prefWidth="51.0" />
@@ -426,7 +426,7 @@
                                           </Text>
                                           <TextArea fx:id="subjects7_TextF_WeeklySub" prefHeight="40.0" prefWidth="215.0" />
                                           <Pane prefHeight="40.0" prefWidth="19.0" />
-                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                          <TextArea fx:id="RequiredM7_TextF_WeeklySub" prefHeight="40.0" prefWidth="297.0" />
                                        </children>
                                     </HBox>
                                     <Pane prefHeight="10.0" prefWidth="51.0" />
@@ -442,7 +442,7 @@
                                           </Text>
                                           <TextArea fx:id="subjects8_TextF_WeeklySub" prefHeight="40.0" prefWidth="215.0" />
                                           <Pane prefHeight="40.0" prefWidth="19.0" />
-                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                          <TextArea fx:id="RequiredM8_TextF_WeeklySub" prefHeight="40.0" prefWidth="297.0" />
                                        </children>
                                     </HBox>
                                     <Pane prefHeight="10.0" prefWidth="51.0" />
@@ -458,7 +458,7 @@
                                           </Text>
                                           <TextArea fx:id="subjects9_TextF_WeeklySub" prefHeight="40.0" prefWidth="215.0" />
                                           <Pane prefHeight="40.0" prefWidth="19.0" />
-                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                          <TextArea fx:id="RequiredM9_TextF_WeeklySub" prefHeight="40.0" prefWidth="297.0" />
                                        </children>
                                     </HBox>
                                     <Pane prefHeight="10.0" prefWidth="51.0" />
@@ -474,11 +474,11 @@
                                           </Text>
                                           <TextArea fx:id="subjects10_TextF_WeeklySub" prefHeight="40.0" prefWidth="215.0" />
                                           <Pane prefHeight="40.0" prefWidth="19.0" />
-                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                          <TextArea fx:id="RequiredM10_TextF_WeeklySub" prefHeight="40.0" prefWidth="297.0" />
                                        </children>
                                     </HBox>
                                     <Pane prefHeight="10.0" prefWidth="51.0" />
-                                    <HBox fx:id="subjects12_TextF_WeeklySub" prefHeight="40.0" prefWidth="606.0">
+                                    <HBox prefHeight="40.0" prefWidth="606.0">
                                        <children>
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="11" wrappingWidth="64.13671875">
                                              <font>
@@ -490,7 +490,7 @@
                                           </Text>
                                           <TextArea fx:id="subjects11_TextF_WeeklySub" prefHeight="40.0" prefWidth="215.0" />
                                           <Pane prefHeight="40.0" prefWidth="19.0" />
-                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                          <TextArea fx:id="RequiredM11_TextF_WeeklySub" prefHeight="40.0" prefWidth="297.0" />
                                        </children>
                                     </HBox>
                                     <Pane prefHeight="10.0" prefWidth="51.0" />
@@ -506,7 +506,7 @@
                                           </Text>
                                           <TextArea fx:id="subjects12_TextF_WeeklySub" prefHeight="40.0" prefWidth="215.0" />
                                           <Pane prefHeight="40.0" prefWidth="19.0" />
-                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                          <TextArea fx:id="RequiredM12_TextF_WeeklySub" prefHeight="40.0" prefWidth="297.0" />
                                        </children>
                                     </HBox>
                                     <Pane prefHeight="10.0" prefWidth="51.0" />
@@ -522,7 +522,7 @@
                                           </Text>
                                           <TextArea fx:id="subjects13_TextF_WeeklySub" prefHeight="40.0" prefWidth="215.0" />
                                           <Pane prefHeight="40.0" prefWidth="19.0" />
-                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                          <TextArea fx:id="RequiredM13_TextF_WeeklySub" prefHeight="40.0" prefWidth="297.0" />
                                        </children>
                                     </HBox>
                                     <Pane prefHeight="10.0" prefWidth="51.0" />
@@ -538,7 +538,7 @@
                                           </Text>
                                           <TextArea fx:id="subjects14_TextF_WeeklySub" prefHeight="40.0" prefWidth="215.0" />
                                           <Pane prefHeight="40.0" prefWidth="19.0" />
-                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                          <TextArea fx:id="RequiredM14_TextF_WeeklySub" prefHeight="40.0" prefWidth="297.0" />
                                        </children>
                                     </HBox>
                                     <Pane prefHeight="10.0" prefWidth="51.0" />
@@ -554,7 +554,7 @@
                                           </Text>
                                           <TextArea fx:id="subjects15_TextF_WeeklySub" prefHeight="40.0" prefWidth="215.0" text="Semester Rewiev" />
                                           <Pane prefHeight="40.0" prefWidth="19.0" />
-                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                          <TextArea fx:id="RequiredM15_TextF_WeeklySub" prefHeight="40.0" prefWidth="297.0" />
                                        </children>
                                     </HBox>
                                     <Pane prefHeight="10.0" prefWidth="51.0" />
@@ -570,7 +570,7 @@
                                           </Text>
                                           <TextArea fx:id="subjects16_TextF_WeeklySub" prefHeight="40.0" prefWidth="215.0" text="Final Exam" />
                                           <Pane prefHeight="40.0" prefWidth="19.0" />
-                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                          <TextArea fx:id="RequiredM16_TextF_WeeklySub" prefHeight="40.0" prefWidth="297.0" />
                                        </children>
                                     </HBox>
                                  </children>
@@ -587,7 +587,7 @@
                                           <Font name="Arial Rounded MT Bold" size="18.0" />
                                        </font>
                                     </Text>
-                                    <TextArea prefHeight="38.0" prefWidth="431.0" />
+                                    <TextArea fx:id="courseNotes_TextF_WeeklySub" prefHeight="38.0" prefWidth="431.0" />
                                  </children>
                               </HBox>
                               <Pane prefHeight="10.0" prefWidth="51.0" />
@@ -598,7 +598,7 @@
                                           <Font name="Arial Rounded MT Bold" size="18.0" />
                                        </font>
                                     </Text>
-                                    <TextArea prefHeight="38.0" prefWidth="431.0" />
+                                    <TextArea fx:id="suggestedMaterials_TextF_WeeklySub" prefHeight="38.0" prefWidth="431.0" />
                                  </children>
                               </HBox>
                               <Pane prefHeight="10.0" prefWidth="620.0" />
@@ -608,7 +608,7 @@
                            <children>
                               <HBox prefHeight="35.0" prefWidth="620.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3. ASSESSMENT" wrappingWidth="354.13671875">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3. Assessment" wrappingWidth="354.13671875">
                                        <font>
                                           <Font name="Arial Rounded MT Bold" size="24.0" />
                                        </font>
@@ -648,11 +648,11 @@
                                           <Font name="Arial Rounded MT Bold" size="16.0" />
                                        </font>
                                     </Text>
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="participationN_TextF_Assessment" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="40.0" prefWidth="22.0" />
-                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <TextField fx:id="participationW_TextF_Assessment" prefHeight="25.0" prefWidth="86.0" />
                                     <Pane prefHeight="40.0" prefWidth="52.0" />
-                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                    <TextField fx:id="participationLO_TextF_Assessment" prefHeight="25.0" prefWidth="100.0" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="40.0" prefWidth="620.0">
@@ -662,11 +662,11 @@
                                           <Font name="Arial Rounded MT Bold" size="16.0" />
                                        </font>
                                     </Text>
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="labN_TextF_Assessment" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="40.0" prefWidth="22.0" />
-                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <TextField fx:id="labW_TextF_Assessment" prefHeight="25.0" prefWidth="86.0" />
                                     <Pane prefHeight="40.0" prefWidth="52.0" />
-                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                    <TextField fx:id="labLO_TextF_Assessment" prefHeight="25.0" prefWidth="100.0" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="40.0" prefWidth="620.0">
@@ -676,11 +676,11 @@
                                           <Font name="Arial Rounded MT Bold" size="16.0" />
                                        </font>
                                     </Text>
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="fieldWorkN_TextF_Assessment" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="40.0" prefWidth="22.0" />
-                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <TextField fx:id="fieldWorkW_TextF_Assessment" prefHeight="25.0" prefWidth="86.0" />
                                     <Pane prefHeight="40.0" prefWidth="52.0" />
-                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                    <TextField fx:id="fieldWorkLO_TextF_Assessment" prefHeight="25.0" prefWidth="100.0" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="40.0" prefWidth="620.0">
@@ -690,11 +690,11 @@
                                           <Font name="Arial Rounded MT Bold" size="16.0" />
                                        </font>
                                     </Text>
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="quizCritiqueN_TextF_Assessment" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="40.0" prefWidth="22.0" />
-                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <TextField fx:id="quizCritiqueW_TextF_Assessment" prefHeight="25.0" prefWidth="86.0" />
                                     <Pane prefHeight="40.0" prefWidth="52.0" />
-                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                    <TextField fx:id="quizCritiqueLO_TextF_Assessment" prefHeight="25.0" prefWidth="100.0" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="40.0" prefWidth="620.0">
@@ -704,11 +704,11 @@
                                           <Font name="Arial Rounded MT Bold" size="16.0" />
                                        </font>
                                     </Text>
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="homeworkN_TextF_Assessment" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="40.0" prefWidth="22.0" />
-                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <TextField fx:id="homeworkW_TextF_Assessment" prefHeight="25.0" prefWidth="86.0" />
                                     <Pane prefHeight="40.0" prefWidth="52.0" />
-                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                    <TextField fx:id="homeworkLO_TextF_Assessment" prefHeight="25.0" prefWidth="100.0" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="40.0" prefWidth="620.0">
@@ -718,11 +718,11 @@
                                           <Font name="Arial Rounded MT Bold" size="16.0" />
                                        </font>
                                     </Text>
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="presentationN_TextF_Assessment" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="40.0" prefWidth="22.0" />
-                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <TextField fx:id="presentationW_TepresentationN_TextF_AssessmentxtF2_Assessment" prefHeight="25.0" prefWidth="86.0" />
                                     <Pane prefHeight="40.0" prefWidth="52.0" />
-                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                    <TextField fx:id="presentationLO_TextF_Assessment" prefHeight="25.0" prefWidth="100.0" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="40.0" prefWidth="620.0">
@@ -732,11 +732,11 @@
                                           <Font name="Arial Rounded MT Bold" size="16.0" />
                                        </font>
                                     </Text>
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="projectN_TextF_Assessment" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="40.0" prefWidth="22.0" />
-                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <TextField fx:id="projectW_TextF_Assessment" prefHeight="25.0" prefWidth="86.0" />
                                     <Pane prefHeight="40.0" prefWidth="52.0" />
-                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                    <TextField fx:id="projectLO_TextF_Assessment" prefHeight="25.0" prefWidth="100.0" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="40.0" prefWidth="620.0">
@@ -746,11 +746,11 @@
                                           <Font name="Arial Rounded MT Bold" size="16.0" />
                                        </font>
                                     </Text>
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="protfolioN_TextF_Assessment" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="40.0" prefWidth="22.0" />
-                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <TextField fx:id="protfolioW_TextF_Assessment" prefHeight="25.0" prefWidth="86.0" />
                                     <Pane prefHeight="40.0" prefWidth="52.0" />
-                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                    <TextField fx:id="protfolioLO_TextF_Assessment" prefHeight="25.0" prefWidth="100.0" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="40.0" prefWidth="620.0">
@@ -760,11 +760,11 @@
                                           <Font name="Arial Rounded MT Bold" size="16.0" />
                                        </font>
                                     </Text>
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="workshopN_TextF_Assessment" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="40.0" prefWidth="22.0" />
-                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <TextField fx:id="workshopW_TextF_Assessment" prefHeight="25.0" prefWidth="86.0" />
                                     <Pane prefHeight="40.0" prefWidth="52.0" />
-                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                    <TextField fx:id="workshopLO_TextF_Assessment" prefHeight="25.0" prefWidth="100.0" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="40.0" prefWidth="620.0">
@@ -774,67 +774,67 @@
                                           <Font name="Arial Rounded MT Bold" size="16.0" />
                                        </font>
                                     </Text>
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="oralExamN_TextF_Assessment" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="40.0" prefWidth="22.0" />
-                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <TextField fx:id="oralExamW_TextF_Assessment" prefHeight="25.0" prefWidth="86.0" />
                                     <Pane prefHeight="40.0" prefWidth="52.0" />
-                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                    <TextField fx:id="oralExamLO_TextF_Assessment" prefHeight="25.0" prefWidth="100.0" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="40.0" prefWidth="620.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oral Exam" wrappingWidth="200.13671875">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Midterm" wrappingWidth="200.13671875">
                                        <font>
                                           <Font name="Arial Rounded MT Bold" size="16.0" />
                                        </font>
                                     </Text>
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="midtermN_TextF_Assessment" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="40.0" prefWidth="22.0" />
-                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <TextField fx:id="midtermW_TextF_Assessment" prefHeight="25.0" prefWidth="86.0" />
                                     <Pane prefHeight="40.0" prefWidth="52.0" />
-                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                    <TextField fx:id="midtermLO_TextF_Assessment" prefHeight="25.0" prefWidth="100.0" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="40.0" prefWidth="620.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oral Exam" wrappingWidth="200.13671875">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Final Exam" wrappingWidth="200.13671875">
                                        <font>
                                           <Font name="Arial Rounded MT Bold" size="16.0" />
                                        </font>
                                     </Text>
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="finalExamN_TextF_Assessment" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="40.0" prefWidth="22.0" />
-                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <TextField fx:id="finalExamW_TextF_Assessment" prefHeight="25.0" prefWidth="86.0" />
                                     <Pane prefHeight="40.0" prefWidth="52.0" />
-                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                    <TextField fx:id="finalExamLO_TextF_Assessment" prefHeight="25.0" prefWidth="100.0" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="40.0" prefWidth="620.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oral Exam" wrappingWidth="200.13671875">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weighting of Semester Activities on the Final Grade" wrappingWidth="200.13671875">
                                        <font>
                                           <Font name="Arial Rounded MT Bold" size="16.0" />
                                        </font>
                                     </Text>
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="weightingofSemesterN_TextF_Assessment" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="40.0" prefWidth="22.0" />
-                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <TextField fx:id="weightingofSemesterW_TextF_Assessment" prefHeight="25.0" prefWidth="86.0" />
                                     <Pane prefHeight="40.0" prefWidth="52.0" />
-                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                    <TextField fx:id="weightingofSemesterLO_TextF_Assessment" prefHeight="25.0" prefWidth="100.0" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="40.0" prefWidth="620.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oral Exam" wrappingWidth="200.13671875">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weighting of End-of-Semester Activities on the Final Grade" wrappingWidth="200.13671875">
                                        <font>
                                           <Font name="Arial Rounded MT Bold" size="16.0" />
                                        </font>
                                     </Text>
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="weightingofEndSemesterN_TextF_Assessment" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="40.0" prefWidth="22.0" />
-                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <TextField fx:id="weightingofEndSemesterW_TextF_Assessment" prefHeight="25.0" prefWidth="86.0" />
                                     <Pane prefHeight="40.0" prefWidth="52.0" />
-                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                    <TextField fx:id="weightingofEndSemesterLO_TextF_Assessment" prefHeight="25.0" prefWidth="100.0" />
                                  </children>
                               </HBox>
 
@@ -887,11 +887,11 @@
                                           <Font name="Arial Rounded MT Bold" size="16.0" />
                                        </font>
                                     </Text>
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="courseHourN_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="33.0" prefWidth="34.0" />
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="courseHourDH_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="33.0" prefWidth="35.0" />
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="courseHourW_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="67.0" prefWidth="633.0">
@@ -901,11 +901,11 @@
                                           <Font name="Arial Rounded MT Bold" size="16.0" />
                                        </font>
                                     </Text>
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="LabHourN_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="33.0" prefWidth="34.0" />
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="LabHourDH_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="33.0" prefWidth="35.0" />
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="LabHourW_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="33.0" prefWidth="702.0">
@@ -915,11 +915,11 @@
                                           <Font name="Arial Rounded MT Bold" size="16.0" />
                                        </font>
                                     </Text>
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="studyHourN_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="33.0" prefWidth="34.0" />
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="studyHourDH_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="33.0" prefWidth="35.0" />
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="studyHourW_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  </children>
                               </HBox><HBox prefHeight="33.0" prefWidth="702.0">
                               <children>
@@ -928,11 +928,11 @@
                                        <Font name="Arial Rounded MT Bold" size="16.0" />
                                     </font>
                                  </Text>
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="fieldWN_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  <Pane prefHeight="33.0" prefWidth="34.0" />
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="fieldWDH_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  <Pane prefHeight="33.0" prefWidth="35.0" />
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="fieldWW_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                               </children>
                            </HBox>
                               <HBox prefHeight="33.0" prefWidth="702.0">
@@ -942,11 +942,11 @@
                                           <Font name="Arial Rounded MT Bold" size="16.0" />
                                        </font>
                                     </Text>
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="quizN_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="33.0" prefWidth="34.0" />
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="quizDH_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                     <Pane prefHeight="33.0" prefWidth="35.0" />
-                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <TextField fx:id="quizW_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  </children>
                               </HBox><HBox prefHeight="33.0" prefWidth="702.0">
                               <children>
@@ -955,11 +955,11 @@
                                        <Font name="Arial Rounded MT Bold" size="16.0" />
                                     </font>
                                  </Text>
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="homeWN_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  <Pane prefHeight="33.0" prefWidth="34.0" />
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="homeWDH_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  <Pane prefHeight="33.0" prefWidth="35.0" />
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="homeWW_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                               </children>
                            </HBox><HBox prefHeight="33.0" prefWidth="702.0">
                               <children>
@@ -968,11 +968,11 @@
                                        <Font name="Arial Rounded MT Bold" size="16.0" />
                                     </font>
                                  </Text>
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="presentationN_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  <Pane prefHeight="33.0" prefWidth="34.0" />
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="presentationDH_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  <Pane prefHeight="33.0" prefWidth="35.0" />
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="presentationW_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                               </children>
                            </HBox><HBox prefHeight="33.0" prefWidth="702.0">
                               <children>
@@ -981,11 +981,11 @@
                                        <Font name="Arial Rounded MT Bold" size="16.0" />
                                     </font>
                                  </Text>
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="projectN_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  <Pane prefHeight="33.0" prefWidth="34.0" />
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="projectDH_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  <Pane prefHeight="33.0" prefWidth="35.0" />
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="projectW_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                               </children>
                            </HBox><HBox prefHeight="33.0" prefWidth="702.0">
                               <children>
@@ -994,11 +994,11 @@
                                        <Font name="Arial Rounded MT Bold" size="16.0" />
                                     </font>
                                  </Text>
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="portfolioN_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  <Pane prefHeight="33.0" prefWidth="34.0" />
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="portfolioDH_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  <Pane prefHeight="33.0" prefWidth="35.0" />
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="portfolioW_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                               </children>
                            </HBox><HBox prefHeight="33.0" prefWidth="702.0">
                               <children>
@@ -1007,11 +1007,11 @@
                                        <Font name="Arial Rounded MT Bold" size="16.0" />
                                     </font>
                                  </Text>
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="workshopN_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  <Pane prefHeight="33.0" prefWidth="34.0" />
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="workshopDH_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  <Pane prefHeight="33.0" prefWidth="35.0" />
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="workshopW_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                               </children>
                            </HBox><HBox prefHeight="33.0" prefWidth="702.0">
                               <children>
@@ -1020,11 +1020,11 @@
                                        <Font name="Arial Rounded MT Bold" size="16.0" />
                                     </font>
                                  </Text>
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="oralExamN_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  <Pane prefHeight="33.0" prefWidth="34.0" />
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="oralExamDH_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  <Pane prefHeight="33.0" prefWidth="35.0" />
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="oralExamW_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                               </children>
                            </HBox><HBox prefHeight="33.0" prefWidth="702.0">
                               <children>
@@ -1033,11 +1033,11 @@
                                        <Font name="Arial Rounded MT Bold" size="16.0" />
                                     </font>
                                  </Text>
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="midtermN_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  <Pane prefHeight="33.0" prefWidth="34.0" />
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="midtermDH_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  <Pane prefHeight="33.0" prefWidth="35.0" />
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="midtermW_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                               </children>
                            </HBox><HBox prefHeight="33.0" prefWidth="702.0">
                               <children>
@@ -1046,11 +1046,11 @@
                                        <Font name="Arial Rounded MT Bold" size="16.0" />
                                     </font>
                                  </Text>
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="finalExamN_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  <Pane prefHeight="33.0" prefWidth="34.0" />
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="finalExamDH_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                                  <Pane prefHeight="33.0" prefWidth="35.0" />
-                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <TextField fx:id="finalExamW_TextF_WorkloadTable" prefHeight="25.0" prefWidth="81.0" />
                               </children>
                            </HBox>
                            </children>
@@ -1095,22 +1095,18 @@
                                           <Font name="Arial Rounded MT Bold" size="18.0" />
                                        </font>
                                     </Text>
-                                    <TextArea prefHeight="96.0" prefWidth="309.0" />
+                                    <TextArea fx:id="programCompetencies_TextF_CourseOutcomes" prefHeight="96.0" prefWidth="309.0" />
                                     <VBox prefHeight="96.0" prefWidth="174.0">
                                        <children>
-                                          <RadioButton mnemonicParsing="false" text="1">
+                                          <RadioButton fx:id="ContrLevel1_RadioB_GeneralInf" mnemonicParsing="false" text="1">
                                              <toggleGroup>
                                                 <ToggleGroup fx:id="contLevel" />
                                              </toggleGroup>
                                           </RadioButton>
-                                          <RadioButton mnemonicParsing="false" text="2" toggleGroup="$contLevel" />
-                                          <RadioButton mnemonicParsing="false" text="3" toggleGroup="$contLevel" />
-                                          <RadioButton mnemonicParsing="false" text="4">
-                                             <toggleGroup>
-                                                <ToggleGroup fx:id="contLevel1" />
-                                             </toggleGroup>
-                                          </RadioButton>
-                                          <RadioButton mnemonicParsing="false" text="5" toggleGroup="$contLevel" />
+                                          <RadioButton fx:id="ContrLevel2_RadioB_GeneralInf" mnemonicParsing="false" text="2" toggleGroup="$contLevel" />
+                                          <RadioButton fx:id="ContrLevel3_RadioB_GeneralInf" mnemonicParsing="false" text="3" toggleGroup="$contLevel" />
+                                          <RadioButton fx:id="ContrLevel4_RadioB_GeneralInf" mnemonicParsing="false" text="4" toggleGroup="$contLevel" />
+                                          <RadioButton fx:id="ContrLevel5_RadioB_GeneralInf" mnemonicParsing="false" text="5" toggleGroup="$contLevel" />
                                        </children>
                                        <padding>
                                           <Insets left="20.0" />
@@ -1119,7 +1115,7 @@
                                     <VBox prefHeight="7.0" prefWidth="100.0">
                                        <children>
                                           <Pane prefHeight="24.0" prefWidth="100.0" />
-                                          <TextField />
+                                          <TextField fx:id="LO_TextF_GeneralInf" />
                                        </children>
                                     </VBox>
                                  </children>
@@ -1129,7 +1125,7 @@
                               </HBox>
                               <Pane prefHeight="82.0" prefWidth="633.0">
                                  <children>
-                                    <Button layoutX="519.0" layoutY="29.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="89.0" style="-fx-background-color: #18c474;" stylesheets="@../../../Styles/hoverEffect.css" text="Add" textFill="WHITE">
+                                    <Button fx:id="addButton_CreateSyllabusPage" layoutX="519.0" layoutY="29.0" mnemonicParsing="false" onAction="#addButtonFunction_CreateSyllabusPage" prefHeight="35.0" prefWidth="89.0" style="-fx-background-color: #18c474;" stylesheets="@../../../Styles/hoverEffect.css" text="Add" textFill="WHITE">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -1149,7 +1145,7 @@
                         </VBox>
                         <Pane prefHeight="64.0" prefWidth="633.0">
                            <children>
-                              <Button layoutX="422.0" layoutY="13.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="190.0" style="-fx-background-color: #18c474;" stylesheets="@../../../Styles/hoverEffect.css" text="Save All Informations" textFill="WHITE">
+                              <Button fx:id="saveallButton_CreateSyllabus" layoutX="422.0" layoutY="13.0" mnemonicParsing="false" onAction="#saveallButtonFunction_CreateSyllabus" prefHeight="38.0" prefWidth="190.0" style="-fx-background-color: #18c474;" stylesheets="@../../../Styles/hoverEffect.css" text="Save All Informations" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
