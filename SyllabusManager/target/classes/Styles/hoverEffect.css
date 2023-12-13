@@ -1,0 +1,5 @@
+.button:hover {
+    -fx-background-color: #4CAF50; /* Hover olduğunda arka plan rengi */
+    -fx-text-fill: white; /* Hover olduğunda metin rengi */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); /* Hover olduğunda gölge efekti */
+}
