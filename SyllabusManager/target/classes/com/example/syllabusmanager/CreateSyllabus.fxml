@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-radius: 30; -fx-border-radius: 30; -fx-background-color: #f8f4fc;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <HBox layoutY="-3.0" prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="3.0">
+<ScrollPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="2500.0" prefWidth="1280.0" style="-fx-background-radius: 30; -fx-border-radius: 30; -fx-background-color: #f8f4fc;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+      <children>
+      <HBox layoutY="6.0" prefHeight="2493.0" prefWidth="1280.0" AnchorPane.bottomAnchor="1.0">
          <children>
-            <VBox prefHeight="661.0" prefWidth="318.0">
+            <VBox prefHeight="680.0" prefWidth="620.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  1. General Information" wrappingWidth="317.13671875">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="25.0" />
                      </font>
                   </Text>
+                        <Pane prefHeight="20.0" prefWidth="51.0" />
                   <HBox prefHeight="17.0" prefWidth="318.0">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Code:" wrappingWidth="64.13671875">
@@ -27,9 +37,10 @@
                               <Font name="Arial Rounded MT Bold" size="18.0" />
                            </font>
                         </Text>
-                        <TextField prefHeight="25.0" prefWidth="180.0" />
+                        <TextField prefHeight="25.0" prefWidth="181.0" />
                      </children>
                   </HBox>
+                        <Pane prefHeight="10.0" prefWidth="51.0" />
                   <HBox prefHeight="17.0" prefWidth="318.0">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fall/Spring:" wrappingWidth="109.13671875">
@@ -37,127 +48,1120 @@
                               <Font name="Arial Rounded MT Bold" size="18.0" />
                            </font>
                         </Text>
+                        <RadioButton mnemonicParsing="false" text="Fall" textAlignment="CENTER">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="fallSpring" />
+                           </toggleGroup>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </RadioButton>
+                        <RadioButton mnemonicParsing="false" text="Spring" toggleGroup="$fallSpring">
+                           <padding>
+                              <Insets left="15.0" />
+                           </padding>
+                        </RadioButton>
                      </children>
                   </HBox>
+                        <Pane prefHeight="10.0" prefWidth="51.0" />
                   <HBox prefHeight="17.0" prefWidth="318.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Theory(hour/week):" wrappingWidth="180.13671875">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Theory (hour/week):" wrappingWidth="180.13671875">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="18.0" />
                            </font>
                         </Text>
-                        <TextField prefHeight="25.0" prefWidth="98.0" />
+                        <TextField prefHeight="25.0" prefWidth="147.0" />
                      </children>
                   </HBox>
+                        <Pane prefHeight="10.0" prefWidth="51.0" />
                   <HBox prefHeight="17.0" prefWidth="318.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Code:" wrappingWidth="64.13671875">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lab (hour/week):" wrappingWidth="180.13671875">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="18.0" />
                            </font>
                         </Text>
-                        <TextField prefHeight="25.0" prefWidth="180.0" />
+                        <TextField prefHeight="25.0" prefWidth="146.0" />
                      </children>
                   </HBox>
+                        <Pane prefHeight="10.0" prefWidth="51.0" />
                   <HBox prefHeight="17.0" prefWidth="318.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Code:" wrappingWidth="64.13671875">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Local Credits:" wrappingWidth="180.13671875">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="18.0" />
                            </font>
                         </Text>
-                        <TextField prefHeight="25.0" prefWidth="180.0" />
+                        <TextField prefHeight="25.0" prefWidth="146.0" />
                      </children>
                   </HBox>
+                        <Pane prefHeight="10.0" prefWidth="51.0" />
                   <HBox prefHeight="17.0" prefWidth="318.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Code:" wrappingWidth="64.13671875">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prerequisties:" wrappingWidth="180.13671875">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="18.0" />
                            </font>
                         </Text>
-                        <TextField prefHeight="25.0" prefWidth="180.0" />
+                        <TextField prefHeight="25.0" prefWidth="147.0" />
                      </children>
                   </HBox>
+                        <Pane prefHeight="10.0" prefWidth="51.0" />
                   <HBox prefHeight="17.0" prefWidth="318.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Code:" wrappingWidth="64.13671875">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Course Language:" wrappingWidth="180.13671875">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="18.0" />
                            </font>
                         </Text>
-                        <TextField prefHeight="25.0" prefWidth="180.0" />
+                        <RadioButton mnemonicParsing="false" text="Turkish">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="language" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton mnemonicParsing="false" text="English" toggleGroup="$language" />
+                        <RadioButton mnemonicParsing="false" text="Second Foreign Languge" toggleGroup="$language" />
                      </children>
                   </HBox>
+                        <Pane prefHeight="10.0" prefWidth="51.0" />
                   <HBox prefHeight="17.0" prefWidth="318.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Code:" wrappingWidth="64.13671875">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Course Type: " wrappingWidth="180.13671875">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="18.0" />
                            </font>
                         </Text>
-                        <TextField prefHeight="25.0" prefWidth="180.0" />
+                        <RadioButton mnemonicParsing="false" text="Required">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="courseType" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton mnemonicParsing="false" text="Elective" toggleGroup="$courseType">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </RadioButton>
                      </children>
                   </HBox>
-                  <HBox prefHeight="17.0" prefWidth="318.0">
+                        <Pane prefHeight="10.0" prefWidth="51.0" />
+                  <HBox prefHeight="47.0" prefWidth="453.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Code:" wrappingWidth="64.13671875">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Course Level" wrappingWidth="180.13671875">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="18.0" />
                            </font>
                         </Text>
-                        <TextField prefHeight="25.0" prefWidth="180.0" />
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="Short Cycle">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="courseLevel" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="Second Cycle" toggleGroup="$courseLevel" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="First Cycle" toggleGroup="$courseLevel" />
+                              <RadioButton mnemonicParsing="false" text="Third Cycle" toggleGroup="$courseLevel" />
+                           </children>
+                        </VBox>
                      </children>
                   </HBox>
+                        <Pane prefHeight="10.0" prefWidth="51.0" />
                   <HBox prefHeight="17.0" prefWidth="318.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Code:" wrappingWidth="64.13671875">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mode of Delivery" wrappingWidth="180.13671875">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="18.0" />
                            </font>
                         </Text>
-                        <TextField prefHeight="25.0" prefWidth="180.0" />
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="Face-to-Face">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="modeofDelivery" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="Online" toggleGroup="$modeofDelivery" />
+                           </children>
+                        </VBox>
+                        <RadioButton mnemonicParsing="false" text="Blended" toggleGroup="$modeofDelivery" />
                      </children>
                   </HBox>
-                  <HBox prefHeight="17.0" prefWidth="318.0">
+                        <Pane prefHeight="10.0" prefWidth="51.0" />
+                  <HBox prefHeight="62.0" prefWidth="453.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Code:" wrappingWidth="64.13671875">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Teaching Methods andTechniques:" wrappingWidth="180.13671875">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="18.0" />
                            </font>
                         </Text>
-                        <TextField prefHeight="25.0" prefWidth="180.0" />
+                        <TextArea prefHeight="62.0" prefWidth="444.0" />
                      </children>
                   </HBox>
+                        <Pane prefHeight="10.0" prefWidth="51.0" />
                   <HBox prefHeight="17.0" prefWidth="318.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Code:" wrappingWidth="64.13671875">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Course Coordinator:" wrappingWidth="192.13671875">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="18.0" />
                            </font>
                         </Text>
-                        <TextField prefHeight="25.0" prefWidth="180.0" />
+                        <TextField prefHeight="25.0" prefWidth="433.0" />
                      </children>
                   </HBox>
+                        <Pane prefHeight="10.0" prefWidth="51.0" />
                   <HBox prefHeight="17.0" prefWidth="318.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Code:" wrappingWidth="64.13671875">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Course Lecturer(s):" wrappingWidth="180.13671875">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="18.0" />
                            </font>
                         </Text>
-                        <TextField prefHeight="25.0" prefWidth="180.0" />
+                        <TextField prefHeight="25.0" prefWidth="481.0" />
                      </children>
                   </HBox>
+                        <Pane prefHeight="10.0" prefWidth="51.0" />
+                  <HBox prefHeight="24.0" prefWidth="411.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Assistant(s):" wrappingWidth="180.13671875">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <TextArea prefHeight="38.0" prefWidth="449.0" />
+                     </children>
+                  </HBox>
+                        <Pane prefHeight="10.0" prefWidth="51.0" />
+                  <HBox prefHeight="67.0" prefWidth="640.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Course Objectives:" wrappingWidth="180.13671875">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <TextArea prefHeight="67.0" prefWidth="474.0" />
+                     </children>
+                  </HBox>
+                        <Pane prefHeight="10.0" prefWidth="51.0" />
+                  <HBox prefHeight="52.0" prefWidth="411.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Learning Outcomes:" wrappingWidth="180.13671875">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <TextArea prefHeight="52.0" prefWidth="458.0" />
+                     </children>
+                  </HBox>
+                        <Pane prefHeight="10.0" prefWidth="51.0" />
+                  <HBox prefHeight="65.0" prefWidth="606.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Learning Outcomes:" wrappingWidth="180.13671875">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <VBox prefHeight="104.0" prefWidth="215.0">
+                                 <children>
+                                    <RadioButton mnemonicParsing="false" text="Core Course" />
+                                    <RadioButton mnemonicParsing="false" text="Major Area Course" />
+                                    <RadioButton mnemonicParsing="false" text="Supportive Course" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="104.0" prefWidth="349.0">
+                                 <children>
+                                    <RadioButton mnemonicParsing="false" text="Communication and Management Skills Course" />
+                                    <RadioButton mnemonicParsing="false" text="Transferable Skill Course" />
+                                 </children>
+                              </VBox>
+                           </children></HBox>
+                        <Pane prefHeight="10.0" prefWidth="51.0" />
+                        <HBox prefHeight="874.0" prefWidth="620.0">
+                           <children>
+                              <VBox prefHeight="828.0" prefWidth="620.0">
+                                 <children>
+                                    <HBox prefHeight="40.0" prefWidth="606.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Week" wrappingWidth="50.13671875">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Subjects" textAlignment="CENTER" wrappingWidth="213.13671875">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="15.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Required Materials" textAlignment="CENTER" wrappingWidth="289.13671875">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="3.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="40.0" prefWidth="606.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="64.13671875">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextArea prefHeight="40.0" prefWidth="215.0" />
+                                          <Pane prefHeight="40.0" prefWidth="19.0" />
+                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                       </children>
+                                    </HBox>
+                                    <Pane prefHeight="10.0" prefWidth="51.0" />
+                                    <HBox prefHeight="40.0" prefWidth="606.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2" wrappingWidth="64.13671875">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextArea prefHeight="40.0" prefWidth="215.0" />
+                                          <Pane prefHeight="40.0" prefWidth="19.0" />
+                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                       </children>
+                                    </HBox>
+                                    <Pane prefHeight="10.0" prefWidth="51.0" />
+                                    <HBox prefHeight="40.0" prefWidth="606.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3" wrappingWidth="64.13671875">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextArea prefHeight="40.0" prefWidth="215.0" />
+                                          <Pane prefHeight="40.0" prefWidth="19.0" />
+                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                       </children>
+                                    </HBox>
+                                    <Pane prefHeight="10.0" prefWidth="51.0" />
+                                    <HBox prefHeight="40.0" prefWidth="606.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4" wrappingWidth="64.13671875">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextArea prefHeight="40.0" prefWidth="215.0" />
+                                          <Pane prefHeight="40.0" prefWidth="19.0" />
+                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                       </children>
+                                    </HBox>
+                                    <Pane prefHeight="10.0" prefWidth="51.0" />
+                                    <HBox prefHeight="40.0" prefWidth="606.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="5" wrappingWidth="64.13671875">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextArea prefHeight="40.0" prefWidth="215.0" />
+                                          <Pane prefHeight="40.0" prefWidth="19.0" />
+                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                       </children>
+                                    </HBox>
+                                    <Pane prefHeight="10.0" prefWidth="51.0" />
+                                    <HBox prefHeight="40.0" prefWidth="606.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="6" wrappingWidth="64.13671875">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextArea prefHeight="40.0" prefWidth="215.0" />
+                                          <Pane prefHeight="40.0" prefWidth="19.0" />
+                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                       </children>
+                                    </HBox>
+                                    <Pane prefHeight="10.0" prefWidth="51.0" />
+                                    <HBox prefHeight="40.0" prefWidth="606.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="7" wrappingWidth="64.13671875">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextArea prefHeight="40.0" prefWidth="215.0" />
+                                          <Pane prefHeight="40.0" prefWidth="19.0" />
+                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                       </children>
+                                    </HBox>
+                                    <Pane prefHeight="10.0" prefWidth="51.0" />
+                                    <HBox prefHeight="40.0" prefWidth="606.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="8" wrappingWidth="64.13671875">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextArea prefHeight="40.0" prefWidth="215.0" />
+                                          <Pane prefHeight="40.0" prefWidth="19.0" />
+                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                       </children>
+                                    </HBox>
+                                    <Pane prefHeight="10.0" prefWidth="51.0" />
+                                    <HBox prefHeight="40.0" prefWidth="606.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="9" wrappingWidth="64.13671875">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextArea prefHeight="40.0" prefWidth="215.0" />
+                                          <Pane prefHeight="40.0" prefWidth="19.0" />
+                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                       </children>
+                                    </HBox>
+                                    <Pane prefHeight="10.0" prefWidth="51.0" />
+                                    <HBox prefHeight="40.0" prefWidth="606.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="10" wrappingWidth="64.13671875">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextArea prefHeight="40.0" prefWidth="215.0" />
+                                          <Pane prefHeight="40.0" prefWidth="19.0" />
+                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                       </children>
+                                    </HBox>
+                                    <Pane prefHeight="10.0" prefWidth="51.0" />
+                                    <HBox prefHeight="40.0" prefWidth="606.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="11" wrappingWidth="64.13671875">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextArea prefHeight="40.0" prefWidth="215.0" />
+                                          <Pane prefHeight="40.0" prefWidth="19.0" />
+                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                       </children>
+                                    </HBox>
+                                    <Pane prefHeight="10.0" prefWidth="51.0" />
+                                    <HBox prefHeight="40.0" prefWidth="606.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="12" wrappingWidth="64.13671875">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextArea prefHeight="40.0" prefWidth="215.0" />
+                                          <Pane prefHeight="40.0" prefWidth="19.0" />
+                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                       </children>
+                                    </HBox>
+                                    <Pane prefHeight="10.0" prefWidth="51.0" />
+                                    <HBox prefHeight="40.0" prefWidth="606.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="13" wrappingWidth="64.13671875">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextArea prefHeight="40.0" prefWidth="215.0" />
+                                          <Pane prefHeight="40.0" prefWidth="19.0" />
+                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                       </children>
+                                    </HBox>
+                                    <Pane prefHeight="10.0" prefWidth="51.0" />
+                                    <HBox prefHeight="40.0" prefWidth="606.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="14" wrappingWidth="64.13671875">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextArea prefHeight="40.0" prefWidth="215.0" />
+                                          <Pane prefHeight="40.0" prefWidth="19.0" />
+                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                       </children>
+                                    </HBox>
+                                    <Pane prefHeight="10.0" prefWidth="51.0" />
+                                    <HBox prefHeight="40.0" prefWidth="606.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="15" wrappingWidth="64.13671875">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextArea prefHeight="40.0" prefWidth="215.0" text="Semester Rewiev" />
+                                          <Pane prefHeight="40.0" prefWidth="19.0" />
+                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                       </children>
+                                    </HBox>
+                                    <Pane prefHeight="10.0" prefWidth="51.0" />
+                                    <HBox prefHeight="40.0" prefWidth="606.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="16" wrappingWidth="64.13671875">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <TextArea prefHeight="40.0" prefWidth="215.0" text="Final Exam" />
+                                          <Pane prefHeight="40.0" prefWidth="19.0" />
+                                          <TextArea prefHeight="40.0" prefWidth="297.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Pane prefHeight="10.0" prefWidth="51.0" />
+                        <VBox prefHeight="117.0" prefWidth="620.0">
+                           <children>
+                              <HBox prefHeight="27.0" prefWidth="620.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Course Notes/Textbooks" wrappingWidth="192.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <TextArea prefHeight="38.0" prefWidth="431.0" />
+                                 </children>
+                              </HBox>
+                              <Pane prefHeight="10.0" prefWidth="51.0" />
+                              <HBox prefHeight="27.0" prefWidth="620.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Suggested Readings/Materials" wrappingWidth="192.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <TextArea prefHeight="38.0" prefWidth="431.0" />
+                                 </children>
+                              </HBox>
+                              <Pane prefHeight="10.0" prefWidth="620.0" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="635.0" prefWidth="620.0">
+                           <children>
+                              <HBox prefHeight="35.0" prefWidth="620.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3. ASSESSMENT" wrappingWidth="354.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="24.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <Pane prefHeight="10.0" prefWidth="620.0" />
+                              <HBox prefHeight="29.0" prefWidth="620.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" Semester Activities" wrappingWidth="201.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number" wrappingWidth="99.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weighting " wrappingWidth="127.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Learning Outcome" wrappingWidth="174.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <Pane prefHeight="10.0" prefWidth="620.0" />
+                              <HBox prefHeight="40.0" prefWidth="620.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Participation" wrappingWidth="200.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="40.0" prefWidth="22.0" />
+                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <Pane prefHeight="40.0" prefWidth="52.0" />
+                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="40.0" prefWidth="620.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Laboratory/Application" wrappingWidth="200.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="40.0" prefWidth="22.0" />
+                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <Pane prefHeight="40.0" prefWidth="52.0" />
+                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="40.0" prefWidth="620.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Field Work" wrappingWidth="200.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="40.0" prefWidth="22.0" />
+                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <Pane prefHeight="40.0" prefWidth="52.0" />
+                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="40.0" prefWidth="620.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Quiz/Studio Critique" wrappingWidth="200.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="40.0" prefWidth="22.0" />
+                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <Pane prefHeight="40.0" prefWidth="52.0" />
+                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="40.0" prefWidth="620.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Homework/Assignment" wrappingWidth="200.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="40.0" prefWidth="22.0" />
+                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <Pane prefHeight="40.0" prefWidth="52.0" />
+                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="40.0" prefWidth="620.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Presentation/Jury" wrappingWidth="200.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="40.0" prefWidth="22.0" />
+                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <Pane prefHeight="40.0" prefWidth="52.0" />
+                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="40.0" prefWidth="620.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Project" wrappingWidth="200.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="40.0" prefWidth="22.0" />
+                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <Pane prefHeight="40.0" prefWidth="52.0" />
+                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="40.0" prefWidth="620.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Portfolio" wrappingWidth="200.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="40.0" prefWidth="22.0" />
+                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <Pane prefHeight="40.0" prefWidth="52.0" />
+                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="40.0" prefWidth="620.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seminar/Workshop" wrappingWidth="200.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="40.0" prefWidth="22.0" />
+                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <Pane prefHeight="40.0" prefWidth="52.0" />
+                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="40.0" prefWidth="620.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oral Exam" wrappingWidth="200.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="40.0" prefWidth="22.0" />
+                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <Pane prefHeight="40.0" prefWidth="52.0" />
+                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="40.0" prefWidth="620.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oral Exam" wrappingWidth="200.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="40.0" prefWidth="22.0" />
+                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <Pane prefHeight="40.0" prefWidth="52.0" />
+                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="40.0" prefWidth="620.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oral Exam" wrappingWidth="200.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="40.0" prefWidth="22.0" />
+                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <Pane prefHeight="40.0" prefWidth="52.0" />
+                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="40.0" prefWidth="620.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oral Exam" wrappingWidth="200.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="40.0" prefWidth="22.0" />
+                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <Pane prefHeight="40.0" prefWidth="52.0" />
+                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="40.0" prefWidth="620.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oral Exam" wrappingWidth="200.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="40.0" prefWidth="22.0" />
+                                    <TextField prefHeight="25.0" prefWidth="86.0" />
+                                    <Pane prefHeight="40.0" prefWidth="52.0" />
+                                    <TextField prefHeight="25.0" prefWidth="100.0" />
+                                 </children>
+                              </HBox>
+
+                           </children>
+                        </VBox>
+                  <!-- Diğer HBox'ları buraya ekleyebilirsiniz -->
                </children>
             </VBox>
-            <VBox prefHeight="720.0" prefWidth="315.0" />
-            <VBox prefHeight="720.0" prefWidth="315.0" />
-            <VBox prefHeight="720.0" prefWidth="335.0" />
+            <VBox prefHeight="2453.0" prefWidth="104.0">
+                     <children>
+                        <VBox prefHeight="570.0" prefWidth="673.0">
+                           <children>
+                              <HBox prefHeight="40.0" prefWidth="633.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4. ECTS / Workload Table" wrappingWidth="377.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="24.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="47.0" prefWidth="633.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" Semester Activities  " textAlignment="CENTER" wrappingWidth="295.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number" wrappingWidth="110.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Duration (Hours)" textAlignment="CENTER" wrappingWidth="87.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Workload" textAlignment="CENTER" wrappingWidth="137.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="50.0" prefWidth="633.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Course Hours(Including exam week: 16 x total hours)" wrappingWidth="294.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="33.0" prefWidth="34.0" />
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="33.0" prefWidth="35.0" />
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="67.0" prefWidth="633.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Laboratory/Application Hours(Including exam week: 16 x total hours)" wrappingWidth="294.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="33.0" prefWidth="34.0" />
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="33.0" prefWidth="35.0" />
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="33.0" prefWidth="702.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Study Hours out of Class" wrappingWidth="294.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="33.0" prefWidth="34.0" />
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="33.0" prefWidth="35.0" />
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 </children>
+                              </HBox><HBox prefHeight="33.0" prefWidth="702.0">
+                              <children>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Field Work" wrappingWidth="294.13671875">
+                                    <font>
+                                       <Font name="Arial Rounded MT Bold" size="16.0" />
+                                    </font>
+                                 </Text>
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <Pane prefHeight="33.0" prefWidth="34.0" />
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <Pane prefHeight="33.0" prefWidth="35.0" />
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                              </children>
+                           </HBox>
+                              <HBox prefHeight="33.0" prefWidth="702.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Quiz/Studio Critique" wrappingWidth="294.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="33.0" prefWidth="34.0" />
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                    <Pane prefHeight="33.0" prefWidth="35.0" />
+                                    <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 </children>
+                              </HBox><HBox prefHeight="33.0" prefWidth="702.0">
+                              <children>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Homework/Assignments" wrappingWidth="294.13671875">
+                                    <font>
+                                       <Font name="Arial Rounded MT Bold" size="16.0" />
+                                    </font>
+                                 </Text>
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <Pane prefHeight="33.0" prefWidth="34.0" />
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <Pane prefHeight="33.0" prefWidth="35.0" />
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                              </children>
+                           </HBox><HBox prefHeight="33.0" prefWidth="702.0">
+                              <children>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Presentation/Jury" wrappingWidth="294.13671875">
+                                    <font>
+                                       <Font name="Arial Rounded MT Bold" size="16.0" />
+                                    </font>
+                                 </Text>
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <Pane prefHeight="33.0" prefWidth="34.0" />
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <Pane prefHeight="33.0" prefWidth="35.0" />
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                              </children>
+                           </HBox><HBox prefHeight="33.0" prefWidth="702.0">
+                              <children>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Project" wrappingWidth="294.13671875">
+                                    <font>
+                                       <Font name="Arial Rounded MT Bold" size="16.0" />
+                                    </font>
+                                 </Text>
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <Pane prefHeight="33.0" prefWidth="34.0" />
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <Pane prefHeight="33.0" prefWidth="35.0" />
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                              </children>
+                           </HBox><HBox prefHeight="33.0" prefWidth="702.0">
+                              <children>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Portfolio" wrappingWidth="294.13671875">
+                                    <font>
+                                       <Font name="Arial Rounded MT Bold" size="16.0" />
+                                    </font>
+                                 </Text>
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <Pane prefHeight="33.0" prefWidth="34.0" />
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <Pane prefHeight="33.0" prefWidth="35.0" />
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                              </children>
+                           </HBox><HBox prefHeight="33.0" prefWidth="702.0">
+                              <children>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seminar/Workshop" wrappingWidth="294.13671875">
+                                    <font>
+                                       <Font name="Arial Rounded MT Bold" size="16.0" />
+                                    </font>
+                                 </Text>
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <Pane prefHeight="33.0" prefWidth="34.0" />
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <Pane prefHeight="33.0" prefWidth="35.0" />
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                              </children>
+                           </HBox><HBox prefHeight="33.0" prefWidth="702.0">
+                              <children>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oral Exam" wrappingWidth="294.13671875">
+                                    <font>
+                                       <Font name="Arial Rounded MT Bold" size="16.0" />
+                                    </font>
+                                 </Text>
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <Pane prefHeight="33.0" prefWidth="34.0" />
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <Pane prefHeight="33.0" prefWidth="35.0" />
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                              </children>
+                           </HBox><HBox prefHeight="33.0" prefWidth="702.0">
+                              <children>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Midterm" wrappingWidth="294.13671875">
+                                    <font>
+                                       <Font name="Arial Rounded MT Bold" size="16.0" />
+                                    </font>
+                                 </Text>
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <Pane prefHeight="33.0" prefWidth="34.0" />
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <Pane prefHeight="33.0" prefWidth="35.0" />
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                              </children>
+                           </HBox><HBox prefHeight="33.0" prefWidth="702.0">
+                              <children>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Final Exam" wrappingWidth="294.13671875">
+                                    <font>
+                                       <Font name="Arial Rounded MT Bold" size="16.0" />
+                                    </font>
+                                 </Text>
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <Pane prefHeight="33.0" prefWidth="34.0" />
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                                 <Pane prefHeight="33.0" prefWidth="35.0" />
+                                 <TextField prefHeight="25.0" prefWidth="81.0" />
+                              </children>
+                           </HBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="1250.0" prefWidth="633.0">
+                           <children>
+                              <Pane prefHeight="11.0" prefWidth="633.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="5. Course/Program Outcome Matrix" wrappingWidth="498.13671875">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="24.0" />
+                                 </font>
+                              </Text>
+                              <Pane prefHeight="22.0" prefWidth="633.0" />
+                              <HBox prefHeight="24.0" prefWidth="568.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="#" textAlignment="CENTER" wrappingWidth="46.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Program Competencies/Outcomes" wrappingWidth="329.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contribution Level" textAlignment="CENTER" wrappingWidth="179.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LO#" textAlignment="CENTER" wrappingWidth="62.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="101.0" prefWidth="633.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="#" textAlignment="CENTER" wrappingWidth="48.13671875">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <TextArea prefHeight="96.0" prefWidth="309.0" />
+                                    <VBox prefHeight="96.0" prefWidth="174.0">
+                                       <children>
+                                          <RadioButton mnemonicParsing="false" text="1">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="contLevel" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton mnemonicParsing="false" text="2" toggleGroup="$contLevel" />
+                                          <RadioButton mnemonicParsing="false" text="3" toggleGroup="$contLevel" />
+                                          <RadioButton mnemonicParsing="false" text="4">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="contLevel1" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton mnemonicParsing="false" text="5" toggleGroup="$contLevel" />
+                                       </children>
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </VBox>
+                                    <VBox prefHeight="7.0" prefWidth="100.0">
+                                       <children>
+                                          <Pane prefHeight="24.0" prefWidth="100.0" />
+                                          <TextField />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets top="5.0" />
+                                 </padding>
+                              </HBox>
+                              <Pane prefHeight="82.0" prefWidth="633.0">
+                                 <children>
+                                    <Button layoutX="519.0" layoutY="29.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="89.0" style="-fx-background-color: #18c474;" stylesheets="@../../../Styles/hoverEffect.css" text="Add" textFill="WHITE">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                              <TableView prefHeight="973.0" prefWidth="633.0">
+                                <columns>
+                                  <TableColumn prefWidth="46.0" text="#" />
+                                  <TableColumn prefWidth="320.0" text="Program Competencies/Outcomes" />
+                                    <TableColumn prefWidth="158.0" text="Contribution Level" />
+                                    <TableColumn minWidth="3.0" prefWidth="108.0" text="LO#" />
+                                </columns>
+                              </TableView>
+                              
+                           </children>
+                        </VBox>
+                        <Pane prefHeight="64.0" prefWidth="633.0">
+                           <children>
+                              <Button layoutX="422.0" layoutY="13.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="190.0" style="-fx-background-color: #18c474;" stylesheets="@../../../Styles/hoverEffect.css" text="Save All Informations" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+
+            </VBox>
          </children>
          <padding>
             <Insets bottom="20.0" left="15.0" right="15.0" top="20.0" />
          </padding>
-      </HBox>
-   </children>
-</AnchorPane>
+         </HBox>
+      </children>
+   </AnchorPane>
+   </content>
+</ScrollPane>
