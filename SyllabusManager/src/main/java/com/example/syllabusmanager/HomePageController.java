@@ -39,6 +39,7 @@ public class HomePageController {
 
             stage.setResizable(false);
 
+
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

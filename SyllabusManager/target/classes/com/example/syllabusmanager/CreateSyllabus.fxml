@@ -1132,12 +1132,12 @@
                                     </Button>
                                  </children>
                               </Pane>
-                              <TableView prefHeight="973.0" prefWidth="633.0">
+                              <TableView fx:id="table_OutcomeMatrixt" prefHeight="973.0" prefWidth="633.0">
                                 <columns>
                                   <TableColumn prefWidth="46.0" text="#" />
-                                  <TableColumn prefWidth="320.0" text="Program Competencies/Outcomes" />
-                                    <TableColumn prefWidth="158.0" text="Contribution Level" />
-                                    <TableColumn minWidth="3.0" prefWidth="108.0" text="LO#" />
+                                  <TableColumn fx:id="outcomesTableView_OutcomeMatrixcolumn" prefWidth="320.0" text="Program Competencies/Outcomes" />
+                                    <TableColumn fx:id="contributionLevel_OutcomeMatrixcolumn" prefWidth="158.0" text="Contribution Level" />
+                                    <TableColumn fx:id="LO_OutcomeMatrixcolumn" minWidth="3.0" prefWidth="108.0" text="LO#" />
                                 </columns>
                               </TableView>
                               
