@@ -2,8 +2,7 @@ package com.example.syllabusmanager;
 
 import java.util.ArrayList;
 
-public class Syllabus
-{
+public class Syllabus {
     //section 1
 
     String GI_code;
@@ -167,8 +166,8 @@ public class Syllabus
                     int assesPortfolio_LO, int assesSeminar_N, int assesSeminar_W, int assesSeminar_LO, int assesOralexam_N,
                     int assesOralexam_W, int assesOralexam_LO, int assesMidterm_N, int assesMidterm_W, int assesMidterm_LO,
                     int assesFinal_N, int assesFinal_W, int assesFinal_LO,
-                    int assesWeightingofSemesterActivitiesontheFinalGrade_N,int assesWeightingofSemesterActivitiesontheFinalGrade_W,int assesWeightingofSemesterActivitiesontheFinalGrade_LO,
-                    int assesWeightingofEndofSemesterActivitiesontheFinalGrade_N,int assesWeightingofEndofSemesterActivitiesontheFinalGrade_W,int assesWeightingofEndofSemesterActivitiesontheFinalGrade_LO,
+                    int assesWeightingofSemesterActivitiesontheFinalGrade_N, int assesWeightingofSemesterActivitiesontheFinalGrade_W, int assesWeightingofSemesterActivitiesontheFinalGrade_LO,
+                    int assesWeightingofEndofSemesterActivitiesontheFinalGrade_N, int assesWeightingofEndofSemesterActivitiesontheFinalGrade_W, int assesWeightingofEndofSemesterActivitiesontheFinalGrade_LO,
 
                     int WLTableCoursehours_N, int WLTableCoursehours_DH,
                     int WLTableCoursehours_W, int WLTableLabhours_N, int WLTableLabhours_DH, int WLTableLabhours_W,

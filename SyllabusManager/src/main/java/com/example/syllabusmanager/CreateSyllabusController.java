@@ -6,6 +6,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -16,19 +17,17 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.net.URL;
+import java.util.*;
 import java.util.function.UnaryOperator;
 import java.util.regex.Pattern;
 
 
-public class CreateSyllabusController {
+public class CreateSyllabusController implements Initializable {
 
     Alert a = new Alert(Alert.AlertType.NONE);
     Alert b = new Alert(Alert.AlertType.NONE);
-//General info
+    //General info
     //General info code
     @FXML
     private TextField code_TextF_GeneralInf;
@@ -171,7 +170,8 @@ public class CreateSyllabusController {
             return -1;
         }
     }
-//Weekly subjects
+
+    //Weekly subjects
     //WEEK1
     @FXML
     private TextArea subjects1_TextF_WeeklySub;
@@ -368,7 +368,7 @@ public class CreateSyllabusController {
     private TextField weightingofEndSemesterW_TextF_Assessment;
     @FXML
     private TextField weightingofEndSemesterLO_TextF_Assessment;
-//ECTS / Workload Table
+    //ECTS / Workload Table
     //course hour
     @FXML
     private TextField courseHourN_TextF_WorkloadTable;
@@ -460,13 +460,13 @@ public class CreateSyllabusController {
     private TextField finalExamDH_TextF_WorkloadTable;
     @FXML
     private TextField finalExamW_TextF_WorkloadTable;
-//Course/Program Outcome Matrix
+    //Course/Program Outcome Matrix
     @FXML
     private TextArea programCompetencies_TextF_CourseOutcomes;
     @FXML
-    private RadioButton ContrLevel1_RadioB_GeneralInf,ContrLevel2_RadioB_GeneralInf,
-                        ContrLevel3_RadioB_GeneralInf,ContrLevel4_RadioB_GeneralInf,
-                        ContrLevel5_RadioB_GeneralInf;
+    private RadioButton ContrLevel1_RadioB_GeneralInf, ContrLevel2_RadioB_GeneralInf,
+            ContrLevel3_RadioB_GeneralInf, ContrLevel4_RadioB_GeneralInf,
+            ContrLevel5_RadioB_GeneralInf;
     @FXML
     private TextField LO_TextF_GeneralInf;
 
@@ -482,9 +482,7 @@ public class CreateSyllabusController {
     private TableView<ProgramOutcomedata> table_OutcomeMatrixt;
 
 
-
-    class ProgramOutcomedata
-    {
+    class ProgramOutcomedata {
         String outcomesTableView;
         Integer contributionLevel;
         String LO;
@@ -501,8 +499,7 @@ public class CreateSyllabusController {
             return LO;
         }
 
-        public ProgramOutcomedata(String outcomesTableView, Integer contributionLevel, String LO)
-        {
+        public ProgramOutcomedata(String outcomesTableView, Integer contributionLevel, String LO) {
             this.outcomesTableView = outcomesTableView;
             this.contributionLevel = contributionLevel;
             this.LO = LO;
@@ -510,17 +507,13 @@ public class CreateSyllabusController {
     }
 
     @FXML
-    private void addButtonFunction_CreateSyllabusPage(ActionEvent event)
-    {
+    private void addButtonFunction_CreateSyllabusPage(ActionEvent event) {
 
-        if(!programCompetencies_TextF_CourseOutcomes.getText().isEmpty() &&
+        if (!programCompetencies_TextF_CourseOutcomes.getText().isEmpty() &&
                 outcomematix_contributionlevel() != -1 &&
-                !LO_TextF_GeneralInf.getText().isEmpty())
-        {
+                !LO_TextF_GeneralInf.getText().isEmpty()) {
             ProgramOutcomedata newData = new ProgramOutcomedata
                     (programCompetencies_TextF_CourseOutcomes.getText(), outcomematix_contributionlevel(), LO_TextF_GeneralInf.getText());
-
-
 
 
             table_OutcomeMatrixt.getItems().add(newData);
@@ -553,13 +546,17 @@ public class CreateSyllabusController {
 
 
 
+    public void initialize(URL location, ResourceBundle resources) {
+
+        init();
+    }
 
 
 
 
 
-    public void init()
-    {
+
+    public void init() {
         subjects15_TextF_WeeklySub.setEditable(false);
         subjects16_TextF_WeeklySub.setEditable(false);
 
@@ -680,16 +677,12 @@ public class CreateSyllabusController {
         lab_TextF_GeneralInf.setTextFormatter(new TextFormatter<String>(filter));
 
 
-
-
-
-
         outcomesTableView_OutcomeMatrixcolumn.setCellValueFactory(cellData -> {
             return new SimpleStringProperty(cellData.getValue().getOutcomesTableView());
         });
 
         //contributionLevel_OutcomeMatrixcolumn.setCellValueFactory(cellData -> {
-            //return new SimpleIntegerProperty(cellData.getValue().getContributionLevel());
+        //return new SimpleIntegerProperty(cellData.getValue().getContributionLevel());
         //});
 
         contributionLevel_OutcomeMatrixcolumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<ProgramOutcomedata, Integer>, ObservableValue<Integer>>() {
@@ -701,7 +694,6 @@ public class CreateSyllabusController {
         });
 
 
-
         LO_OutcomeMatrixcolumn.setCellValueFactory(cellData -> {
             return new SimpleStringProperty(cellData.getValue().getLO());
         });
@@ -710,42 +702,9 @@ public class CreateSyllabusController {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @FXML
-    private void saveallButtonFunction_CreateSyllabus(ActionEvent event)
-    {
-        init();
+    private void saveallButtonFunction_CreateSyllabus(ActionEvent event) {
+        //init();
 
         //subjects16_TextF_WeeklySub.setEditable(false);
         //subjects16_TextF_WeeklySub.setEditable(false);
@@ -757,63 +716,56 @@ public class CreateSyllabusController {
                 code_TextF_GeneralInf, theory_TextF_GeneralInf, lab_TextF_GeneralInf,
                 local_TextF_GeneralInf, prerequisities_TextF_GeneralInf, courseCoordinator_TextF_GeneralInf,
                 courseLecturer_TextF_GeneralInf);
-        for (TextField field : textFields)
-        {
-            if (field.getText() == null || field.getText().trim().isEmpty())
-            {
+        for (TextField field : textFields) {
+            if (field.getText() == null || field.getText().trim().isEmpty()) {
 
                 saveallkey = false;
                 break;
             }
         }
 
-            List<TextArea> textAreas = Arrays.asList(learningO_TextF_GeneralInf,
-                    courseObj_TextF_GeneralInf,assistant_TextF_GeneralInf,TeachingM_TextF_GeneralInf);
-            for (TextField area : textFields)
-            {
-                if (area.getText() == null || area.getText().trim().isEmpty())
-                {
-                    saveallkey = false;
-                    break;
-                }
+        List<TextArea> textAreas = Arrays.asList(learningO_TextF_GeneralInf,
+                courseObj_TextF_GeneralInf, assistant_TextF_GeneralInf, TeachingM_TextF_GeneralInf);
+        for (TextField area : textFields) {
+            if (area.getText() == null || area.getText().trim().isEmpty()) {
+                saveallkey = false;
+                break;
             }
+        }
 
 
-            String generalInfo_Code = code_TextF_GeneralInf.getText();
-            String generalInfo_Theory = theory_TextF_GeneralInf.getText();
-            String generalInfo_Lab = lab_TextF_GeneralInf.getText();
+        String generalInfo_Code = code_TextF_GeneralInf.getText();
+        String generalInfo_Theory = theory_TextF_GeneralInf.getText();
+        String generalInfo_Lab = lab_TextF_GeneralInf.getText();
 
-            String generalInfo_localCreditstext = local_TextF_GeneralInf.getText();
-            int generalInfo_localCredits = generalInfo_localCreditstext.isEmpty() ? 0 : Integer.parseInt(generalInfo_localCreditstext);
+        String generalInfo_localCreditstext = local_TextF_GeneralInf.getText();
+        int generalInfo_localCredits = generalInfo_localCreditstext.isEmpty() ? 0 : Integer.parseInt(generalInfo_localCreditstext);
 
-            String generalInfo_Prerequisites = prerequisities_TextF_GeneralInf.getText();
-            String generalInfo_Teachingmethods = TeachingM_TextF_GeneralInf.getText();
-            String generalInfo_CourseCoordinator = courseCoordinator_TextF_GeneralInf.getText();
-            String generalInfo_CourseLecturer = courseLecturer_TextF_GeneralInf.getText();
-            String generalInfo_CourseAssistant = assistant_TextF_GeneralInf.getText();
-            String generalInfo_CourseObjectives = courseObj_TextF_GeneralInf.getText();
-            String generalInfo_Learningoutcomes = learningO_TextF_GeneralInf.getText();
+        String generalInfo_Prerequisites = prerequisities_TextF_GeneralInf.getText();
+        String generalInfo_Teachingmethods = TeachingM_TextF_GeneralInf.getText();
+        String generalInfo_CourseCoordinator = courseCoordinator_TextF_GeneralInf.getText();
+        String generalInfo_CourseLecturer = courseLecturer_TextF_GeneralInf.getText();
+        String generalInfo_CourseAssistant = assistant_TextF_GeneralInf.getText();
+        String generalInfo_CourseObjectives = courseObj_TextF_GeneralInf.getText();
+        String generalInfo_Learningoutcomes = learningO_TextF_GeneralInf.getText();
 
 
-            int generalInfo_FallSpring = generalInfo_FallSpringRadiobutton();
-            int generalInfo_courseLanguage = generalInfo_courselanguage();
-            int generalInfo_courseType = generalInfo_coursetype();
-            int generalInfo_courseLevel = generalInfo_courselevel();
-            int generalInfo_Modeofdelivery = generalInfo_modeofdelivery();
-            int generalInfo_CourseCategory = generalInfo_coursecategory();
+        int generalInfo_FallSpring = generalInfo_FallSpringRadiobutton();
+        int generalInfo_courseLanguage = generalInfo_courselanguage();
+        int generalInfo_courseType = generalInfo_coursetype();
+        int generalInfo_courseLevel = generalInfo_courselevel();
+        int generalInfo_Modeofdelivery = generalInfo_modeofdelivery();
+        int generalInfo_CourseCategory = generalInfo_coursecategory();
 
-            List<Integer> generalinfo_Radiobuttons = Arrays.asList(
-                    generalInfo_FallSpring, generalInfo_courseLanguage, generalInfo_courseType,
-                    generalInfo_courseLevel, generalInfo_Modeofdelivery, generalInfo_CourseCategory);
-            for (Integer value : generalinfo_Radiobuttons)
-            {
-                if (value == -1)
-                {
-                    saveallkey = false;
-                    break;
-                }
+        List<Integer> generalinfo_Radiobuttons = Arrays.asList(
+                generalInfo_FallSpring, generalInfo_courseLanguage, generalInfo_courseType,
+                generalInfo_courseLevel, generalInfo_Modeofdelivery, generalInfo_CourseCategory);
+        for (Integer value : generalinfo_Radiobuttons) {
+            if (value == -1) {
+                saveallkey = false;
+                break;
             }
-
+        }
 
 
         //Weekly subjects
@@ -866,8 +818,7 @@ public class CreateSyllabusController {
         String weeklysub_16req = RequiredM16_TextF_WeeklySub.getText();
 
         String weeklysub_coursenotes = courseNotes_TextF_WeeklySub.getText();
-        String weeklysub_suggmat =  suggestedMaterials_TextF_WeeklySub.getText();
-
+        String weeklysub_suggmat = suggestedMaterials_TextF_WeeklySub.getText();
 
 
         //Assessment
@@ -920,7 +871,7 @@ public class CreateSyllabusController {
         //int assesQuizLO = Integer.parseInt(quizCritiqueLO_TextF_Assessment.getText());
         String QuizLOtext = quizCritiqueLO_TextF_Assessment.getText();
         int assesQuizLO = QuizLOtext.isEmpty() ? 0 : Integer.parseInt(QuizLOtext);
-        
+
         //int assesHomewN = Integer.parseInt(homeworkN_TextF_Assessment.getText());
         String HomewNtext = homeworkN_TextF_Assessment.getText();
         int assesHomewN = HomewNtext.isEmpty() ? 0 : Integer.parseInt(HomewNtext);
@@ -1044,19 +995,18 @@ public class CreateSyllabusController {
 
         int totalweight = 0;
         List<Integer> assesmentWeight = Arrays.asList(
-                assesParticipW,assesLabW,assesFiledW,assesQuizW,assesHomewW,assesPresentW,assesProjectW,assesPortfolW,
-                assesWorkshW,assesOraleW,assesMidtW,assesFinalW,assesWeightofSemesterW,assesWeightofEndofSemesterW
-                );
-        for (Integer value : assesmentWeight)
-        {
-            if (value == null)
-            {continue;}
+                assesParticipW, assesLabW, assesFiledW, assesQuizW, assesHomewW, assesPresentW, assesProjectW, assesPortfolW,
+                assesWorkshW, assesOraleW, assesMidtW, assesFinalW, assesWeightofSemesterW, assesWeightofEndofSemesterW
+        );
+        for (Integer value : assesmentWeight) {
+            if (value == null) {
+                continue;
+            }
 
-          totalweight += value;
+            totalweight += value;
 
         }
-        if (totalweight != 100)
-        {
+        if (totalweight != 100) {
             saveallkey = false;
             b.setAlertType(Alert.AlertType.WARNING);
             b.setHeaderText(" Total weight must be 100 ");
@@ -1185,68 +1135,51 @@ public class CreateSyllabusController {
         int ectsFinalW = ectsFinalWtext.isEmpty() ? 0 : Integer.parseInt(ectsFinalWtext);
 
 
-
-
-
         ArrayList<ProgramOutcomedata> outcomeMatrix = new ArrayList<ProgramOutcomedata>();
         for (ProgramOutcomedata outcome : table_OutcomeMatrixt.getItems()) {
-            System.out.println("outcomes: " + outcome.getOutcomesTableView() + ", contribution level: " + outcome.getContributionLevel()+ " LO: "+ outcome.getLO());
+            System.out.println("outcomes: " + outcome.getOutcomesTableView() + ", contribution level: " + outcome.getContributionLevel() + " LO: " + outcome.getLO());
             outcomeMatrix.add(outcome);
         }
 
 
-
-
-
-
-
-
-
-
-
-
-        if(!saveallkey)
-        {
+        if (!saveallkey) {
             a.setAlertType(Alert.AlertType.WARNING);
             a.setHeaderText(" All sections must be filled ");
             a.show();
-        }
-        else
-        {
+        } else {
             a.setAlertType(Alert.AlertType.INFORMATION);
             a.setHeaderText(" All saved ");
             a.show();
-            Syllabus newSyllabus = new Syllabus(generalInfo_Code,generalInfo_FallSpring, generalInfo_Theory, generalInfo_Lab, generalInfo_localCredits,
-                    generalInfo_Prerequisites,generalInfo_courseLanguage,generalInfo_courseType,generalInfo_courseLevel,
+            Syllabus newSyllabus = new Syllabus(generalInfo_Code, generalInfo_FallSpring, generalInfo_Theory, generalInfo_Lab, generalInfo_localCredits,
+                    generalInfo_Prerequisites, generalInfo_courseLanguage, generalInfo_courseType, generalInfo_courseLevel,
                     generalInfo_Modeofdelivery, generalInfo_Teachingmethods, generalInfo_CourseCoordinator, generalInfo_CourseLecturer,
                     generalInfo_CourseAssistant, generalInfo_CourseObjectives, generalInfo_Learningoutcomes, generalInfo_CourseCategory,
 
-                    weeklysub_1sub,weeklysub_1req,weeklysub_2sub,weeklysub_2req,weeklysub_3sub,weeklysub_3req,
-                    weeklysub_4sub,weeklysub_4req,weeklysub_5sub,weeklysub_5req,weeklysub_6sub,weeklysub_6req,
-                    weeklysub_7sub,weeklysub_7req,weeklysub_8sub,weeklysub_8req,weeklysub_9sub,weeklysub_9req,
-                    weeklysub_10sub,weeklysub_10req,weeklysub_11sub,weeklysub_11req,weeklysub_12sub,weeklysub_12req,
-                    weeklysub_13sub,weeklysub_13req,weeklysub_14sub,weeklysub_14req,weeklysub_15sub,weeklysub_15req,
-                    weeklysub_16sub,weeklysub_16req,weeklysub_coursenotes,weeklysub_suggmat,
+                    weeklysub_1sub, weeklysub_1req, weeklysub_2sub, weeklysub_2req, weeklysub_3sub, weeklysub_3req,
+                    weeklysub_4sub, weeklysub_4req, weeklysub_5sub, weeklysub_5req, weeklysub_6sub, weeklysub_6req,
+                    weeklysub_7sub, weeklysub_7req, weeklysub_8sub, weeklysub_8req, weeklysub_9sub, weeklysub_9req,
+                    weeklysub_10sub, weeklysub_10req, weeklysub_11sub, weeklysub_11req, weeklysub_12sub, weeklysub_12req,
+                    weeklysub_13sub, weeklysub_13req, weeklysub_14sub, weeklysub_14req, weeklysub_15sub, weeklysub_15req,
+                    weeklysub_16sub, weeklysub_16req, weeklysub_coursenotes, weeklysub_suggmat,
 
-                    assesParticipN,assesParticipW,assesParticipLO,assesLabN,assesLabW,assesLabLO,
-                    assesFiledN,assesFiledW,assesFiledLO,assesQuizN,assesQuizW,assesQuizLO,
-                    assesHomewN,assesHomewW ,assesHomewLO,assesPresentN,assesPresentW,assesPresentLO,
-                    assesProjectN,assesProjectW,assesProjectLO,assesPortfolN,assesPortfolW,assesPortfolLO,
-                    assesWorkshN,assesWorkshW,assesWorkshLO,assesOraleN,assesOraleW,assesOraleLO,
-                    assesMidtN,assesMidtW,assesMidtLO,assesFinalN,assesFinalW,assesFinalLO,
-                    assesWeightofSemesterN,assesWeightofSemesterW,assesWeightofSemesterLO,
-                    assesWeightofEndofSemesterN,assesWeightofEndofSemesterW,assesWeightofEndofSemesterLO,
+                    assesParticipN, assesParticipW, assesParticipLO, assesLabN, assesLabW, assesLabLO,
+                    assesFiledN, assesFiledW, assesFiledLO, assesQuizN, assesQuizW, assesQuizLO,
+                    assesHomewN, assesHomewW, assesHomewLO, assesPresentN, assesPresentW, assesPresentLO,
+                    assesProjectN, assesProjectW, assesProjectLO, assesPortfolN, assesPortfolW, assesPortfolLO,
+                    assesWorkshN, assesWorkshW, assesWorkshLO, assesOraleN, assesOraleW, assesOraleLO,
+                    assesMidtN, assesMidtW, assesMidtLO, assesFinalN, assesFinalW, assesFinalLO,
+                    assesWeightofSemesterN, assesWeightofSemesterW, assesWeightofSemesterLO,
+                    assesWeightofEndofSemesterN, assesWeightofEndofSemesterW, assesWeightofEndofSemesterLO,
 
-                    ectsCoursehourN,ectsCoursehourDH,ectsCoursehourW,ectsLabhourN,ectsLabhourDH,ectsLabhourW,
-                    ectsStudyhourN,ectsStudyhourDH,ectsStudyhourW,ectsFieldworkN,ectsFieldworkDH,ectsFieldworkW,
-                    ectsQuizN,ectsQuizDH,ectsQuizW,ectsHomeworkN,ectsHomeworkDH,ectsHomeworkW,
-                    ectsPresentationN,ectsPresentationDH,ectsPresentationW,ectsProjectN,ectsProjectDH,ectsProjectW,
-                    ectsPortfolioN,ectsPortfolioDH,ectsPortfolioW,ectsWorkshopN,ectsWorkshopDH,ectsWorkshopW,
-                    ectsOralexamN,ectsOralexamDH,ectsOralexamW,ectsMidtermN,ectsMidtermDH,ectsMidtermW,
-                    ectsFinalN,ectsFinalDH,ectsFinalW,
+                    ectsCoursehourN, ectsCoursehourDH, ectsCoursehourW, ectsLabhourN, ectsLabhourDH, ectsLabhourW,
+                    ectsStudyhourN, ectsStudyhourDH, ectsStudyhourW, ectsFieldworkN, ectsFieldworkDH, ectsFieldworkW,
+                    ectsQuizN, ectsQuizDH, ectsQuizW, ectsHomeworkN, ectsHomeworkDH, ectsHomeworkW,
+                    ectsPresentationN, ectsPresentationDH, ectsPresentationW, ectsProjectN, ectsProjectDH, ectsProjectW,
+                    ectsPortfolioN, ectsPortfolioDH, ectsPortfolioW, ectsWorkshopN, ectsWorkshopDH, ectsWorkshopW,
+                    ectsOralexamN, ectsOralexamDH, ectsOralexamW, ectsMidtermN, ectsMidtermDH, ectsMidtermW,
+                    ectsFinalN, ectsFinalDH, ectsFinalW,
 
                     outcomeMatrix);
-
 
 
         }

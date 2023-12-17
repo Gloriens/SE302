@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HomePageController {
+public class HomePageController{
     @FXML
     private Label welcomeText;
 
@@ -41,6 +41,7 @@ public class HomePageController {
 
 
             stage.show();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
