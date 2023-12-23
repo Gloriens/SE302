@@ -512,9 +512,11 @@ public class CreateSyllabusController implements Initializable {
         if (!programCompetencies_TextF_CourseOutcomes.getText().isEmpty() &&
                 outcomematix_contributionlevel() != -1 &&
                 !LO_TextF_GeneralInf.getText().isEmpty()) {
+            DBConnector.getInstance().addCourseOutcomeTable(12, LO_TextF_GeneralInf.getText(), programCompetencies_TextF_CourseOutcomes.getText(), outcomematix_contributionlevel());
+
+
             ProgramOutcomedata newData = new ProgramOutcomedata
                     (programCompetencies_TextF_CourseOutcomes.getText(), outcomematix_contributionlevel(), LO_TextF_GeneralInf.getText());
-
 
             table_OutcomeMatrixt.getItems().add(newData);
 
@@ -735,6 +737,7 @@ public class CreateSyllabusController implements Initializable {
 
 
         String generalInfo_Code = code_TextF_GeneralInf.getText();
+        System.out.println(generalInfo_Code);
         String generalInfo_Theory = theory_TextF_GeneralInf.getText();
         String generalInfo_Lab = lab_TextF_GeneralInf.getText();
 
@@ -1012,7 +1015,6 @@ public class CreateSyllabusController implements Initializable {
             b.setHeaderText(" Total weight must be 100 ");
             b.show();
         }
-
 
         //ECTS / Workload Table
 
