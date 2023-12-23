@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="Course_MainTable.db [2]">
+<dataSource name="se302">
   <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.51">
     <root id="1">
       <ServerVersion>3.43.0</ServerVersion>
@@ -446,7 +446,7 @@
     <routine id="176" parent="1" name="fts5"/>
     <schema id="177" parent="1" name="main">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2023-12-22.15:50:24</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2023-12-23.14:44:09</LastIntrospectionLocalTimestamp>
     </schema>
     <argument id="178" parent="16">
       <ArgumentDirection>R</ArgumentDirection>
@@ -1468,251 +1468,600 @@
     <argument id="517" parent="176">
       <Position>1</Position>
     </argument>
-    <table id="518" parent="177" name="AssesmentTable_Data"/>
-    <table id="519" parent="177" name="CourseVersion"/>
-    <table id="520" parent="177" name="Course_AssesmentTable"/>
-    <table id="521" parent="177" name="Course_InformationTable"/>
-    <table id="522" parent="177" name="Course_MainTable"/>
-    <table id="523" parent="177" name="Course_OutcomeTable"/>
-    <table id="524" parent="177" name="Course_WeeklySchedule"/>
-    <table id="525" parent="177" name="Course_WorkloadTable"/>
-    <table id="526" parent="177" name="WorkloadTable_Data"/>
-    <table id="527" parent="177" name="sqlite_master">
+    <table id="518" parent="177" name="CourseAssessmentTable"/>
+    <table id="519" parent="177" name="CourseInformationTable"/>
+    <table id="520" parent="177" name="CourseMainTable"/>
+    <table id="521" parent="177" name="CourseOutcomeTable"/>
+    <table id="522" parent="177" name="CourseWeeklySchedule"/>
+    <table id="523" parent="177" name="CourseWorkloadTable"/>
+    <table id="524" parent="177" name="sqlite_master">
       <System>1</System>
     </table>
-    <column id="528" parent="518" name="activities_id">
+    <column id="525" parent="518" name="assessment_id">
       <DasType>INTEGER|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="529" parent="518" name="number">
+    <column id="526" parent="518" name="assesParticipN">
       <DasType>INTEGER|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="530" parent="518" name="weight">
+    <column id="527" parent="518" name="assesParticipW">
       <DasType>INTEGER|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="531" parent="518" name="learningOutcomes">
+    <column id="528" parent="518" name="assesParticipLO">
       <DasType>INTEGER|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="532" parent="519" name="Course_id">
-      <DasType>TEXT|0s</DasType>
-      <Position>1</Position>
-    </column>
-    <column id="533" parent="519" name="version">
+    <column id="529" parent="518" name="assesLabN">
       <DasType>INTEGER|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <column id="534" parent="519" name="changeDate">
-      <DasType>TEXT|0s</DasType>
-      <Position>3</Position>
-    </column>
-    <column id="535" parent="519" name="changeReason">
-      <DasType>TEXT|0s</DasType>
-      <Position>4</Position>
-    </column>
-    <column id="536" parent="520" name="activities_id">
-      <DasType>INTEGER|0s</DasType>
-      <Position>1</Position>
-    </column>
-    <column id="537" parent="520" name="activity_name">
-      <DasType>TEXT|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <column id="538" parent="521" name="Course_id">
-      <DasType>TEXT|0s</DasType>
-      <Position>1</Position>
-    </column>
-    <column id="539" parent="521" name="Information_id">
-      <DasType>INTEGER|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <column id="540" parent="521" name="courseName">
-      <DasType>TEXT|0s</DasType>
-      <Position>3</Position>
-    </column>
-    <column id="541" parent="521" name="codeFallSpringTheory">
-      <DasType>TEXT|0s</DasType>
-      <Position>4</Position>
-    </column>
-    <column id="542" parent="521" name="application">
-      <DasType>TEXT|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="543" parent="521" name="localCredits">
-      <DasType>TEXT|0s</DasType>
+    <column id="530" parent="518" name="assesLabW">
+      <DasType>INTEGER|0s</DasType>
       <Position>6</Position>
     </column>
-    <column id="544" parent="521" name="ects">
-      <DasType>TEXT|0s</DasType>
+    <column id="531" parent="518" name="assesLabLO">
+      <DasType>INTEGER|0s</DasType>
       <Position>7</Position>
     </column>
-    <column id="545" parent="521" name="prerequisites">
-      <DasType>TEXT|0s</DasType>
+    <column id="532" parent="518" name="assesFiledN">
+      <DasType>INTEGER|0s</DasType>
       <Position>8</Position>
     </column>
-    <column id="546" parent="521" name="courseLanguage">
+    <column id="533" parent="518" name="assesFiledW">
       <DasType>INTEGER|0s</DasType>
       <Position>9</Position>
     </column>
-    <column id="547" parent="521" name="courseType">
+    <column id="534" parent="518" name="assesFiledLO">
       <DasType>INTEGER|0s</DasType>
       <Position>10</Position>
     </column>
-    <column id="548" parent="521" name="courseLevel">
+    <column id="535" parent="518" name="assesQuizN">
       <DasType>INTEGER|0s</DasType>
       <Position>11</Position>
     </column>
-    <column id="549" parent="521" name="modeOfDelivery">
+    <column id="536" parent="518" name="assesQuizW">
       <DasType>INTEGER|0s</DasType>
       <Position>12</Position>
     </column>
-    <column id="550" parent="521" name="teachingMethodsAndTechniques">
-      <DasType>TEXT|0s</DasType>
+    <column id="537" parent="518" name="assesQuizLO">
+      <DasType>INTEGER|0s</DasType>
       <Position>13</Position>
     </column>
-    <column id="551" parent="521" name="courseCoordinator">
-      <DasType>TEXT|0s</DasType>
+    <column id="538" parent="518" name="assesHomewN">
+      <DasType>INTEGER|0s</DasType>
       <Position>14</Position>
     </column>
-    <column id="552" parent="521" name="courseLecturers">
-      <DasType>TEXT|0s</DasType>
+    <column id="539" parent="518" name="assesHomewW">
+      <DasType>INTEGER|0s</DasType>
       <Position>15</Position>
     </column>
-    <column id="553" parent="521" name="assistants">
-      <DasType>TEXT|0s</DasType>
+    <column id="540" parent="518" name="assesHomewLO">
+      <DasType>INTEGER|0s</DasType>
       <Position>16</Position>
     </column>
-    <column id="554" parent="521" name="courseObjectives">
-      <DasType>TEXT|0s</DasType>
+    <column id="541" parent="518" name="assesPresentN">
+      <DasType>INTEGER|0s</DasType>
       <Position>17</Position>
     </column>
-    <column id="555" parent="521" name="learningOutcomes">
-      <DasType>TEXT|0s</DasType>
+    <column id="542" parent="518" name="assesPresentW">
+      <DasType>INTEGER|0s</DasType>
       <Position>18</Position>
     </column>
-    <column id="556" parent="521" name="courseDescription">
-      <DasType>TEXT|0s</DasType>
+    <column id="543" parent="518" name="assesPresentLO">
+      <DasType>INTEGER|0s</DasType>
       <Position>19</Position>
     </column>
-    <column id="557" parent="521" name="courseCategory">
+    <column id="544" parent="518" name="assesProjectN">
       <DasType>INTEGER|0s</DasType>
       <Position>20</Position>
     </column>
-    <column id="558" parent="522" name="version">
+    <column id="545" parent="518" name="assesProjectW">
       <DasType>INTEGER|0s</DasType>
+      <Position>21</Position>
+    </column>
+    <column id="546" parent="518" name="assesProjectLO">
+      <DasType>INTEGER|0s</DasType>
+      <Position>22</Position>
+    </column>
+    <column id="547" parent="518" name="assesPortfolN">
+      <DasType>INTEGER|0s</DasType>
+      <Position>23</Position>
+    </column>
+    <column id="548" parent="518" name="assesPortfolW">
+      <DasType>INTEGER|0s</DasType>
+      <Position>24</Position>
+    </column>
+    <column id="549" parent="518" name="assesPortfolLO">
+      <DasType>INTEGER|0s</DasType>
+      <Position>25</Position>
+    </column>
+    <column id="550" parent="518" name="assesWorkshN">
+      <DasType>INTEGER|0s</DasType>
+      <Position>26</Position>
+    </column>
+    <column id="551" parent="518" name="assesWorkshW">
+      <DasType>INTEGER|0s</DasType>
+      <Position>27</Position>
+    </column>
+    <column id="552" parent="518" name="assesWorkshLO">
+      <DasType>INTEGER|0s</DasType>
+      <Position>28</Position>
+    </column>
+    <column id="553" parent="518" name="assesOraleN">
+      <DasType>INTEGER|0s</DasType>
+      <Position>29</Position>
+    </column>
+    <column id="554" parent="518" name="assesOraleW">
+      <DasType>INTEGER|0s</DasType>
+      <Position>30</Position>
+    </column>
+    <column id="555" parent="518" name="assesOraleLO">
+      <DasType>INTEGER|0s</DasType>
+      <Position>31</Position>
+    </column>
+    <column id="556" parent="518" name="assesMidtN">
+      <DasType>INTEGER|0s</DasType>
+      <Position>32</Position>
+    </column>
+    <column id="557" parent="518" name="assesMidtW">
+      <DasType>INTEGER|0s</DasType>
+      <Position>33</Position>
+    </column>
+    <column id="558" parent="518" name="assesMidtLO">
+      <DasType>INTEGER|0s</DasType>
+      <Position>34</Position>
+    </column>
+    <column id="559" parent="518" name="assesFinalN">
+      <DasType>INTEGER|0s</DasType>
+      <Position>35</Position>
+    </column>
+    <column id="560" parent="518" name="assesFinalW">
+      <DasType>INTEGER|0s</DasType>
+      <Position>36</Position>
+    </column>
+    <column id="561" parent="518" name="assesFinalLO">
+      <DasType>INTEGER|0s</DasType>
+      <Position>37</Position>
+    </column>
+    <column id="562" parent="518" name="assesWeightofSemesterN">
+      <DasType>INTEGER|0s</DasType>
+      <Position>38</Position>
+    </column>
+    <column id="563" parent="518" name="assesWeightofSemesterW">
+      <DasType>INTEGER|0s</DasType>
+      <Position>39</Position>
+    </column>
+    <column id="564" parent="518" name="assesWeightofSemesterLO">
+      <DasType>INTEGER|0s</DasType>
+      <Position>40</Position>
+    </column>
+    <column id="565" parent="518" name="assesWeightofEndofSemesterN">
+      <DasType>INTEGER|0s</DasType>
+      <Position>41</Position>
+    </column>
+    <column id="566" parent="518" name="assesWeightofEndofSemesterW">
+      <DasType>INTEGER|0s</DasType>
+      <Position>42</Position>
+    </column>
+    <column id="567" parent="518" name="assesWeightofEndofSemesterLO">
+      <DasType>INTEGER|0s</DasType>
+      <Position>43</Position>
+    </column>
+    <column id="568" parent="519" name="Course_id">
+      <DasType>TEXT|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="559" parent="522" name="Course_id">
+    <column id="569" parent="519" name="Theory">
       <DasType>TEXT|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="560" parent="522" name="Department_id">
-      <DasType>INTEGER|0s</DasType>
+    <column id="570" parent="519" name="Lab">
+      <DasType>TEXT|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="561" parent="522" name="CourseInformation_id">
+    <column id="571" parent="519" name="Information_id">
       <DasType>INTEGER|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="562" parent="522" name="Course_WeeklySchedule_id">
+    <column id="572" parent="519" name="courseName">
       <DasType>TEXT|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="563" parent="522" name="Course_AssestmentTable_id">
+    <column id="573" parent="519" name="codeFallSpringTheory">
       <DasType>INTEGER|0s</DasType>
       <Position>6</Position>
     </column>
-    <column id="564" parent="522" name="Course_EctsTable_id">
-      <DasType>INTEGER|0s</DasType>
+    <column id="574" parent="519" name="application">
+      <DasType>TEXT|0s</DasType>
       <Position>7</Position>
     </column>
-    <column id="565" parent="522" name="Course_OutcomeTable_id">
+    <column id="575" parent="519" name="localCredits">
       <DasType>INTEGER|0s</DasType>
       <Position>8</Position>
     </column>
-    <column id="566" parent="523" name="Course_OutcomeTable_id">
+    <column id="576" parent="519" name="ects">
+      <DasType>TEXT|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <column id="577" parent="519" name="prerequisites">
+      <DasType>TEXT|0s</DasType>
+      <Position>10</Position>
+    </column>
+    <column id="578" parent="519" name="courseLanguage">
+      <DasType>INTEGER|0s</DasType>
+      <Position>11</Position>
+    </column>
+    <column id="579" parent="519" name="courseType">
+      <DasType>INTEGER|0s</DasType>
+      <Position>12</Position>
+    </column>
+    <column id="580" parent="519" name="courseLevel">
+      <DasType>INTEGER|0s</DasType>
+      <Position>13</Position>
+    </column>
+    <column id="581" parent="519" name="modeOfDelivery">
+      <DasType>INTEGER|0s</DasType>
+      <Position>14</Position>
+    </column>
+    <column id="582" parent="519" name="teachingMethodsAndTechniques">
+      <DasType>TEXT|0s</DasType>
+      <Position>15</Position>
+    </column>
+    <column id="583" parent="519" name="courseCoordinator">
+      <DasType>TEXT|0s</DasType>
+      <Position>16</Position>
+    </column>
+    <column id="584" parent="519" name="courseLecturers">
+      <DasType>TEXT|0s</DasType>
+      <Position>17</Position>
+    </column>
+    <column id="585" parent="519" name="assistants">
+      <DasType>TEXT|0s</DasType>
+      <Position>18</Position>
+    </column>
+    <column id="586" parent="519" name="courseObjectives">
+      <DasType>TEXT|0s</DasType>
+      <Position>19</Position>
+    </column>
+    <column id="587" parent="519" name="learningOutcomes">
+      <DasType>TEXT|0s</DasType>
+      <Position>20</Position>
+    </column>
+    <column id="588" parent="519" name="courseDescription">
+      <DasType>TEXT|0s</DasType>
+      <Position>21</Position>
+    </column>
+    <column id="589" parent="519" name="courseCategory">
+      <DasType>INTEGER|0s</DasType>
+      <Position>22</Position>
+    </column>
+    <column id="590" parent="520" name="version">
       <DasType>INTEGER|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="567" parent="523" name="outcome">
+    <column id="591" parent="520" name="changeDate">
       <DasType>TEXT|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="568" parent="523" name="department_id">
-      <DasType>INTEGER|0s</DasType>
-      <Position>3</Position>
-    </column>
-    <column id="569" parent="523" name="contributionLevel">
-      <DasType>INTEGER|0s</DasType>
-      <Position>4</Position>
-    </column>
-    <column id="570" parent="524" name="Course_weeklyScheduleid_id">
-      <DasType>INTEGER|0s</DasType>
-      <Position>1</Position>
-    </column>
-    <column id="571" parent="524" name="week_number">
-      <DasType>INTEGER|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <column id="572" parent="524" name="subjects">
+    <column id="592" parent="520" name="changeReason">
       <DasType>TEXT|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="573" parent="524" name="requiredMaterials">
+    <column id="593" parent="520" name="Course_id">
       <DasType>TEXT|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="574" parent="524" name="courseTextbooks">
-      <DasType>TEXT|0s</DasType>
+    <column id="594" parent="520" name="CourseInformation_id">
+      <DasType>INTEGER|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="575" parent="524" name="suggestedMaterials">
+    <column id="595" parent="520" name="Course_WeeklySchedule_id">
       <DasType>TEXT|0s</DasType>
       <Position>6</Position>
     </column>
-    <column id="576" parent="525" name="semesterActivity_id">
+    <column id="596" parent="520" name="Course_AssestmentTable_id">
+      <DasType>INTEGER|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="597" parent="520" name="Course_EctsTable_id">
+      <DasType>INTEGER|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="598" parent="520" name="Course_OutcomeTable_id">
+      <DasType>INTEGER|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <column id="599" parent="521" name="outcome_id">
       <DasType>INTEGER|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="577" parent="525" name="semesterActivity_name">
+    <column id="600" parent="521" name="lo">
       <DasType>TEXT|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="578" parent="526" name="semesterActivity_id">
-      <DasType>INTEGER|0s</DasType>
-      <Position>1</Position>
-    </column>
-    <column id="579" parent="526" name="number">
-      <DasType>INTEGER|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <column id="580" parent="526" name="duration">
-      <DasType>INTEGER|0s</DasType>
+    <column id="601" parent="521" name="outcome">
+      <DasType>TEXT|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="581" parent="526" name="workload">
+    <column id="602" parent="521" name="contributionLevel">
       <DasType>INTEGER|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="582" parent="527" name="type">
-      <DasType>TEXT|0s</DasType>
+    <column id="603" parent="522" name="schedule_id">
+      <DasType>INTEGER|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="583" parent="527" name="name">
+    <column id="604" parent="522" name="weeklysub_1sub">
       <DasType>TEXT|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="584" parent="527" name="tbl_name">
+    <column id="605" parent="522" name="weeklysub_1req">
       <DasType>TEXT|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="585" parent="527" name="rootpage">
+    <column id="606" parent="522" name="weeklysub_2sub">
+      <DasType>TEXT|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="607" parent="522" name="weeklysub_2req">
+      <DasType>TEXT|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="608" parent="522" name="weeklysub_3sub">
+      <DasType>TEXT|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="609" parent="522" name="weeklysub_3req">
+      <DasType>TEXT|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="610" parent="522" name="weeklysub_4sub">
+      <DasType>TEXT|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="611" parent="522" name="weeklysub_4req">
+      <DasType>TEXT|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <column id="612" parent="522" name="weeklysub_5sub">
+      <DasType>TEXT|0s</DasType>
+      <Position>10</Position>
+    </column>
+    <column id="613" parent="522" name="weeklysub_5req">
+      <DasType>TEXT|0s</DasType>
+      <Position>11</Position>
+    </column>
+    <column id="614" parent="522" name="weeklysub_6sub">
+      <DasType>TEXT|0s</DasType>
+      <Position>12</Position>
+    </column>
+    <column id="615" parent="522" name="weeklysub_6req">
+      <DasType>TEXT|0s</DasType>
+      <Position>13</Position>
+    </column>
+    <column id="616" parent="522" name="weeklysub_7sub">
+      <DasType>TEXT|0s</DasType>
+      <Position>14</Position>
+    </column>
+    <column id="617" parent="522" name="weeklysub_7req">
+      <DasType>TEXT|0s</DasType>
+      <Position>15</Position>
+    </column>
+    <column id="618" parent="522" name="weeklysub_8sub">
+      <DasType>TEXT|0s</DasType>
+      <Position>16</Position>
+    </column>
+    <column id="619" parent="522" name="weeklysub_8req">
+      <DasType>TEXT|0s</DasType>
+      <Position>17</Position>
+    </column>
+    <column id="620" parent="522" name="weeklysub_9sub">
+      <DasType>TEXT|0s</DasType>
+      <Position>18</Position>
+    </column>
+    <column id="621" parent="522" name="weeklysub_9req">
+      <DasType>TEXT|0s</DasType>
+      <Position>19</Position>
+    </column>
+    <column id="622" parent="522" name="weeklysub_10sub">
+      <DasType>TEXT|0s</DasType>
+      <Position>20</Position>
+    </column>
+    <column id="623" parent="522" name="weeklysub_10req">
+      <DasType>TEXT|0s</DasType>
+      <Position>21</Position>
+    </column>
+    <column id="624" parent="522" name="weeklysub_11sub">
+      <DasType>TEXT|0s</DasType>
+      <Position>22</Position>
+    </column>
+    <column id="625" parent="522" name="weeklysub_11req">
+      <DasType>TEXT|0s</DasType>
+      <Position>23</Position>
+    </column>
+    <column id="626" parent="522" name="weeklysub_12sub">
+      <DasType>TEXT|0s</DasType>
+      <Position>24</Position>
+    </column>
+    <column id="627" parent="522" name="weeklysub_12req">
+      <DasType>TEXT|0s</DasType>
+      <Position>25</Position>
+    </column>
+    <column id="628" parent="522" name="weeklysub_13sub">
+      <DasType>TEXT|0s</DasType>
+      <Position>26</Position>
+    </column>
+    <column id="629" parent="522" name="weeklysub_13req">
+      <DasType>TEXT|0s</DasType>
+      <Position>27</Position>
+    </column>
+    <column id="630" parent="522" name="weeklysub_14sub">
+      <DasType>TEXT|0s</DasType>
+      <Position>28</Position>
+    </column>
+    <column id="631" parent="522" name="weeklysub_14req">
+      <DasType>TEXT|0s</DasType>
+      <Position>29</Position>
+    </column>
+    <column id="632" parent="522" name="weeklysub_15sub">
+      <DasType>TEXT|0s</DasType>
+      <Position>30</Position>
+    </column>
+    <column id="633" parent="522" name="weeklysub_15req">
+      <DasType>TEXT|0s</DasType>
+      <Position>31</Position>
+    </column>
+    <column id="634" parent="522" name="weeklysub_16sub">
+      <DasType>TEXT|0s</DasType>
+      <Position>32</Position>
+    </column>
+    <column id="635" parent="522" name="weeklysub_16req">
+      <DasType>TEXT|0s</DasType>
+      <Position>33</Position>
+    </column>
+    <column id="636" parent="522" name="weeklysub_coursenotes">
+      <DasType>TEXT|0s</DasType>
+      <Position>34</Position>
+    </column>
+    <column id="637" parent="522" name="weeklysub_suggmat">
+      <DasType>TEXT|0s</DasType>
+      <Position>35</Position>
+    </column>
+    <column id="638" parent="523" name="workload_id">
+      <DasType>INTEGER|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="639" parent="523" name="ectsCoursehourN">
+      <DasType>INTEGER|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="640" parent="523" name="ectsCoursehourDH">
+      <DasType>INTEGER|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="641" parent="523" name="ectsCoursehourW">
+      <DasType>INTEGER|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="642" parent="523" name="ectsLabhourN">
+      <DasType>INTEGER|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="643" parent="523" name="ectsLabhourDH">
+      <DasType>INTEGER|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="644" parent="523" name="ectsLabhourW">
+      <DasType>INTEGER ectsStudyhourN INTEGER|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="645" parent="523" name="ectsStudyhourDH">
+      <DasType>INTEGER|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="646" parent="523" name="ectsStudyhourW">
+      <DasType>INTEGER ectsFieldworkN INTEGER|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <column id="647" parent="523" name="ectsFieldworkDH">
+      <DasType>INTEGER|0s</DasType>
+      <Position>10</Position>
+    </column>
+    <column id="648" parent="523" name="ectsFieldworkW">
+      <DasType>INTEGER ectsQuizN INTEGER|0s</DasType>
+      <Position>11</Position>
+    </column>
+    <column id="649" parent="523" name="ectsQuizH">
+      <DasType>INTEGER|0s</DasType>
+      <Position>12</Position>
+    </column>
+    <column id="650" parent="523" name="ectsQuizW">
+      <DasType>INTEGER ectsHomeworkN INTEGER|0s</DasType>
+      <Position>13</Position>
+    </column>
+    <column id="651" parent="523" name="ectsHomeworkH">
+      <DasType>INTEGER|0s</DasType>
+      <Position>14</Position>
+    </column>
+    <column id="652" parent="523" name="ectsHomeworkW">
+      <DasType>INTEGER ectsPresentationN INTEGER|0s</DasType>
+      <Position>15</Position>
+    </column>
+    <column id="653" parent="523" name="ectsPresentationH">
+      <DasType>INTEGER|0s</DasType>
+      <Position>16</Position>
+    </column>
+    <column id="654" parent="523" name="ectsPresentationW">
+      <DasType>INTEGER ectsProjectN INTEGER|0s</DasType>
+      <Position>17</Position>
+    </column>
+    <column id="655" parent="523" name="ectsProjectH">
+      <DasType>INTEGER|0s</DasType>
+      <Position>18</Position>
+    </column>
+    <column id="656" parent="523" name="ectsProjectW">
+      <DasType>INTEGER ectsPortfolioN INTEGER|0s</DasType>
+      <Position>19</Position>
+    </column>
+    <column id="657" parent="523" name="ectsPortfolioH">
+      <DasType>INTEGER|0s</DasType>
+      <Position>20</Position>
+    </column>
+    <column id="658" parent="523" name="ectsPortfolioW">
+      <DasType>INTEGER ectsWorkshopN INTEGER|0s</DasType>
+      <Position>21</Position>
+    </column>
+    <column id="659" parent="523" name="ectsWorkshopH">
+      <DasType>INTEGER|0s</DasType>
+      <Position>22</Position>
+    </column>
+    <column id="660" parent="523" name="ectsWorkshopW">
+      <DasType>INTEGER ectsOralexamN INTEGER|0s</DasType>
+      <Position>23</Position>
+    </column>
+    <column id="661" parent="523" name="ectsOralexamH">
+      <DasType>INTEGER|0s</DasType>
+      <Position>24</Position>
+    </column>
+    <column id="662" parent="523" name="ectsOralexamW">
+      <DasType>INTEGER ectsMidtermN INTEGER|0s</DasType>
+      <Position>25</Position>
+    </column>
+    <column id="663" parent="523" name="ectsMidtermH">
+      <DasType>INTEGER|0s</DasType>
+      <Position>26</Position>
+    </column>
+    <column id="664" parent="523" name="ectsMidtermW">
+      <DasType>INTEGER ectsFinalN INTEGER|0s</DasType>
+      <Position>27</Position>
+    </column>
+    <column id="665" parent="523" name="ectsFinalH">
+      <DasType>INTEGER|0s</DasType>
+      <Position>28</Position>
+    </column>
+    <column id="666" parent="523" name="ectsFinalW">
+      <DasType>INTEGER|0s</DasType>
+      <Position>29</Position>
+    </column>
+    <column id="667" parent="524" name="type">
+      <DasType>TEXT|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="668" parent="524" name="name">
+      <DasType>TEXT|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="669" parent="524" name="tbl_name">
+      <DasType>TEXT|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="670" parent="524" name="rootpage">
       <DasType>INT|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="586" parent="527" name="sql">
+    <column id="671" parent="524" name="sql">
       <DasType>TEXT|0s</DasType>
       <Position>5</Position>
     </column>

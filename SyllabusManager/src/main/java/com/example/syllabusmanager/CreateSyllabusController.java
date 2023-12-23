@@ -25,6 +25,7 @@ import java.util.regex.Pattern;
 
 public class CreateSyllabusController implements Initializable {
 
+    int numberOfOutcomes = 0; //number of outcomes, it will be incremented after every successful "add" button action
     Alert a = new Alert(Alert.AlertType.NONE);
     Alert b = new Alert(Alert.AlertType.NONE);
     //General info
@@ -511,8 +512,8 @@ public class CreateSyllabusController implements Initializable {
 
         if (!programCompetencies_TextF_CourseOutcomes.getText().isEmpty() &&
                 outcomematix_contributionlevel() != -1 &&
-                !LO_TextF_GeneralInf.getText().isEmpty()) {
-            DBConnector.getInstance().addCourseOutcomeTable(12, LO_TextF_GeneralInf.getText(), programCompetencies_TextF_CourseOutcomes.getText(), outcomematix_contributionlevel());
+                !LO_TextF_GeneralInf.getText().isEmpty()) {//numberofoutcomes yerine version girilicek
+            DBConnector.getInstance().addCourseOutcomeTable(++numberOfOutcomes, LO_TextF_GeneralInf.getText(), programCompetencies_TextF_CourseOutcomes.getText(), outcomematix_contributionlevel());
 
 
             ProgramOutcomedata newData = new ProgramOutcomedata
@@ -561,6 +562,7 @@ public class CreateSyllabusController implements Initializable {
     public void init() {
         subjects15_TextF_WeeklySub.setEditable(false);
         subjects16_TextF_WeeklySub.setEditable(false);
+        courseHourW_TextF_WorkloadTable.setEditable(false); //x
 
         participationN_TextF_Assessment.setTextFormatter(new TextFormatter<String>(filter));
         participationW_TextF_Assessment.setTextFormatter(new TextFormatter<String>(filter));
@@ -706,6 +708,7 @@ public class CreateSyllabusController implements Initializable {
 
     @FXML
     private void saveallButtonFunction_CreateSyllabus(ActionEvent event) {
+        numberOfOutcomes = 0;
         //init();
 
         //subjects16_TextF_WeeklySub.setEditable(false);
@@ -718,10 +721,13 @@ public class CreateSyllabusController implements Initializable {
                 code_TextF_GeneralInf, theory_TextF_GeneralInf, lab_TextF_GeneralInf,
                 local_TextF_GeneralInf, prerequisities_TextF_GeneralInf, courseCoordinator_TextF_GeneralInf,
                 courseLecturer_TextF_GeneralInf);
+
+
+
+
         for (TextField field : textFields) {
             if (field.getText() == null || field.getText().trim().isEmpty()) {
-
-                saveallkey = false;
+                saveallkey = false; //this is not working
                 break;
             }
         }
@@ -730,14 +736,13 @@ public class CreateSyllabusController implements Initializable {
                 courseObj_TextF_GeneralInf, assistant_TextF_GeneralInf, TeachingM_TextF_GeneralInf);
         for (TextField area : textFields) {
             if (area.getText() == null || area.getText().trim().isEmpty()) {
-                saveallkey = false;
+                saveallkey = false; //this is not working
                 break;
             }
         }
 
 
         String generalInfo_Code = code_TextF_GeneralInf.getText();
-        System.out.println(generalInfo_Code);
         String generalInfo_Theory = theory_TextF_GeneralInf.getText();
         String generalInfo_Lab = lab_TextF_GeneralInf.getText();
 
@@ -765,7 +770,7 @@ public class CreateSyllabusController implements Initializable {
                 generalInfo_courseLevel, generalInfo_Modeofdelivery, generalInfo_CourseCategory);
         for (Integer value : generalinfo_Radiobuttons) {
             if (value == -1) {
-                saveallkey = false;
+                saveallkey = false; //and also this one not working
                 break;
             }
         }
@@ -1027,6 +1032,7 @@ public class CreateSyllabusController implements Initializable {
 
         String CoursehourWtext = courseHourW_TextF_WorkloadTable.getText();
         int ectsCoursehourW = CoursehourWtext.isEmpty() ? 0 : Integer.parseInt(CoursehourWtext);
+
         //lab hour
         String LabhourNtext = LabHourN_TextF_WorkloadTable.getText();
         int ectsLabhourN = LabhourNtext.isEmpty() ? 0 : Integer.parseInt(LabhourNtext);
@@ -1136,13 +1142,11 @@ public class CreateSyllabusController implements Initializable {
         String ectsFinalWtext = finalExamW_TextF_WorkloadTable.getText();
         int ectsFinalW = ectsFinalWtext.isEmpty() ? 0 : Integer.parseInt(ectsFinalWtext);
 
-
         ArrayList<ProgramOutcomedata> outcomeMatrix = new ArrayList<ProgramOutcomedata>();
         for (ProgramOutcomedata outcome : table_OutcomeMatrixt.getItems()) {
             System.out.println("outcomes: " + outcome.getOutcomesTableView() + ", contribution level: " + outcome.getContributionLevel() + " LO: " + outcome.getLO());
             outcomeMatrix.add(outcome);
         }
-
 
         if (!saveallkey) {
             a.setAlertType(Alert.AlertType.WARNING);
@@ -1180,9 +1184,13 @@ public class CreateSyllabusController implements Initializable {
                     ectsPortfolioN, ectsPortfolioDH, ectsPortfolioW, ectsWorkshopN, ectsWorkshopDH, ectsWorkshopW,
                     ectsOralexamN, ectsOralexamDH, ectsOralexamW, ectsMidtermN, ectsMidtermDH, ectsMidtermW,
                     ectsFinalN, ectsFinalDH, ectsFinalW,
-
                     outcomeMatrix);
 
+            DBConnector.getInstance().addCourseInformationTable(newSyllabus);
+            DBConnector.getInstance().addCourseWeeklySchedule(newSyllabus);
+            DBConnector.getInstance().addCourseAssessmentTable(newSyllabus);
+            DBConnector.getInstance().addCourseWorkloadTable(newSyllabus);
+            DBConnector.getInstance().addCourseMainTable(newSyllabus);
 
         }
 

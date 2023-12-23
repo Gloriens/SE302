@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HomePageController{
+public class HomePageController {
     @FXML
     private Label welcomeText;
 
@@ -35,9 +35,9 @@ public class HomePageController{
             stage.setScene(scene);
 
             stage.setWidth(1300);
-            stage.setHeight(1000);
+            stage.setHeight(800); //was 1000
 
-            stage.setResizable(false);
+            stage.setResizable(true); //was false
 
 
             stage.show();
