@@ -260,7 +260,7 @@
                         <Pane prefHeight="10.0" prefWidth="51.0" />
                   <HBox prefHeight="65.0" prefWidth="606.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Learning Outcomes:" wrappingWidth="180.13671875">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Course Category:" wrappingWidth="180.13671875">
                                  <font>
                                     <Font name="Arial Rounded MT Bold" size="18.0" />
                                  </font>
