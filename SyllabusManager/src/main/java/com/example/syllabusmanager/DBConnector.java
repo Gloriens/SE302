@@ -187,7 +187,7 @@ public class DBConnector {
                         "\"weeklysub_suggmat\" TEXT)";
 
                 final String CREATE_COURSE_OUTCOME_TABLE = "CREATE TABLE IF NOT EXISTS CourseOutcomeTable (" +
-                        "\"version\" INTEGER PRIMARY KEY," +
+                        "\"version\" INTEGER ," +
                         "\"lo\" TEXT," +
                         "\"outcome\" TEXT," +
                         "\"contributionLevel\" INTEGER)";

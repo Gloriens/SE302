@@ -23,9 +23,10 @@ import java.util.function.UnaryOperator;
 import java.util.regex.Pattern;
 
 
+
 public class CreateSyllabusController implements Initializable {
 
-    int numberOfOutcomes = 0; //number of outcomes, it will be incremented after every successful "add" button action
+     //number of outcomes, it will be incremented after every successful "add" button action
     Alert a = new Alert(Alert.AlertType.NONE);
     Alert b = new Alert(Alert.AlertType.NONE);
     //General info
@@ -513,7 +514,7 @@ public class CreateSyllabusController implements Initializable {
         if (!programCompetencies_TextF_CourseOutcomes.getText().isEmpty() &&
                 outcomematix_contributionlevel() != -1 &&
                 !LO_TextF_GeneralInf.getText().isEmpty()) {//numberofoutcomes yerine version girilicek
-            DBConnector.getInstance().addCourseOutcomeTable(++numberOfOutcomes, LO_TextF_GeneralInf.getText(), programCompetencies_TextF_CourseOutcomes.getText(), outcomematix_contributionlevel());
+            DBConnector.getInstance().addCourseOutcomeTable(1, LO_TextF_GeneralInf.getText(), programCompetencies_TextF_CourseOutcomes.getText(), outcomematix_contributionlevel());
 
 
             ProgramOutcomedata newData = new ProgramOutcomedata
@@ -560,7 +561,7 @@ public class CreateSyllabusController implements Initializable {
 
 
     public void init() {
-        numberOfOutcomes = 0;
+
         subjects15_TextF_WeeklySub.setEditable(false);
         subjects16_TextF_WeeklySub.setEditable(false);
 
@@ -709,7 +710,6 @@ public class CreateSyllabusController implements Initializable {
 
     @FXML
     private void saveallButtonFunction_CreateSyllabus(ActionEvent event) {
-        numberOfOutcomes = 0;
         //init();
 
         //subjects16_TextF_WeeklySub.setEditable(false);
@@ -1192,7 +1192,6 @@ public class CreateSyllabusController implements Initializable {
             DBConnector.getInstance().addCourseAssessmentTable(newSyllabus);
             DBConnector.getInstance().addCourseWorkloadTable(newSyllabus);
             DBConnector.getInstance().addCourseMainTable(newSyllabus);
-            DBConnector.getInstance().addCourseOutcomeTable(++numberOfOutcomes, LO_TextF_GeneralInf.getText(), programCompetencies_TextF_CourseOutcomes.getText(), outcomematix_contributionlevel());
 
         }
 
