@@ -560,9 +560,10 @@ public class CreateSyllabusController implements Initializable {
 
 
     public void init() {
+        numberOfOutcomes = 0;
         subjects15_TextF_WeeklySub.setEditable(false);
         subjects16_TextF_WeeklySub.setEditable(false);
-        courseHourW_TextF_WorkloadTable.setEditable(false); //x
+
 
         participationN_TextF_Assessment.setTextFormatter(new TextFormatter<String>(filter));
         participationW_TextF_Assessment.setTextFormatter(new TextFormatter<String>(filter));
