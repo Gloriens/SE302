@@ -1,6 +1,7 @@
 package com.example.syllabusmanager;
 import java.io.File;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class DBConnector {
     private static DBConnector instance = null;
@@ -303,7 +304,6 @@ public class DBConnector {
             insertCourseInformationTable.setInt(20, courseCategory);
             insertCourseInformationTable.setString(21, Theory);
             insertCourseInformationTable.setString(22, Lab);
-
 
             insertCourseInformationTable.execute();
 
@@ -618,5 +618,47 @@ public class DBConnector {
         } catch (Exception e) {
             System.err.println(e);
         }
+    }
+
+    public MiniSyllabus SyllabusFromDatabase(int versionNumber) {
+
+        int targetVersion = versionNumber;
+
+        String selectMainTable = "SELECT * FROM CourseMainTable WHERE version = " + targetVersion;
+        int v = 0;
+        String cou = "";
+        try (Statement statement = connection.createStatement()) {
+
+            try (ResultSet resultSetInformation = statement.executeQuery(selectMainTable)) {
+                while (resultSetInformation.next()) {
+                    int version = resultSetInformation.getInt("version");
+                    String courseId = resultSetInformation.getString("Course_id");
+
+                    v = version;
+                    cou = courseId;
+                    System.out.println("Version: " + version);
+                    System.out.println("Course ID: " + courseId);
+                    // Print or use other columns' data as required
+                }
+            }
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        MiniSyllabus miniSyllabus = new MiniSyllabus(v, cou);
+        return miniSyllabus;
+    }
+
+    public ArrayList<MiniSyllabus> ListMiniSyllabuses () {
+        ArrayList<MiniSyllabus> miniList = new ArrayList<MiniSyllabus>();
+        for (int i = 0; i < 100; i++) {
+            try {
+                miniList.add(DBConnector.getInstance().SyllabusFromDatabase(i));
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+        return miniList;
     }
 }
