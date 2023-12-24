@@ -23,6 +23,15 @@ public class HomePageController {
     private AnchorPane homePage;
 
     @FXML
+    private Button exitButton;
+
+    @FXML
+    private Button helpButton;
+
+    @FXML
+    private Button exit;
+
+    @FXML
     private void createSyllabusAction(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("CreateSyllabus.fxml"));
@@ -42,6 +51,48 @@ public class HomePageController {
 
             stage.show();
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void exit(ActionEvent event) {
+        // Uygulamadan çıkış işlemleri burada yapılabilir
+        System.exit(0);
+    }
+
+    @FXML
+    private void compare(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("compare.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Help");
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void openHelp(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("help.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Help");
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+
+            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
