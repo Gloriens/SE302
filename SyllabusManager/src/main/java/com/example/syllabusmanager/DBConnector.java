@@ -112,39 +112,39 @@ public class DBConnector {
                         "\"ectsCoursehourW\" INTEGER," +
                         "\"ectsLabhourN\" INTEGER," +
                         "\"ectsLabhourDH\" INTEGER," +
-                        "\"ectsLabhourW\" INTEGER" +
+                        "\"ectsLabhourW\" INTEGER," +
                         "\"ectsStudyhourN\" INTEGER," +
                         "\"ectsStudyhourDH\" INTEGER," +
-                        "\"ectsStudyhourW\" INTEGER" +
+                        "\"ectsStudyhourW\" INTEGER," +
                         "\"ectsFieldworkN\" INTEGER," +
                         "\"ectsFieldworkDH\" INTEGER," +
-                        "\"ectsFieldworkW\" INTEGER" +
+                        "\"ectsFieldworkW\" INTEGER," +
                         "\"ectsQuizN\" INTEGER," +
-                        "\"ectsQuizH\" INTEGER," +
-                        "\"ectsQuizW\" INTEGER" +
+                        "\"ectsQuizDH\" INTEGER," +
+                        "\"ectsQuizW\" INTEGER," +
                         "\"ectsHomeworkN\" INTEGER," +
-                        "\"ectsHomeworkH\" INTEGER," +
-                        "\"ectsHomeworkW\" INTEGER" +
+                        "\"ectsHomeworkDH\" INTEGER," +
+                        "\"ectsHomeworkW\" INTEGER," +
                         "\"ectsPresentationN\" INTEGER," +
-                        "\"ectsPresentationH\" INTEGER," +
-                        "\"ectsPresentationW\" INTEGER" +
+                        "\"ectsPresentationDH\" INTEGER," +
+                        "\"ectsPresentationW\" INTEGER," +
                         "\"ectsProjectN\" INTEGER," +
-                        "\"ectsProjectH\" INTEGER," +
-                        "\"ectsProjectW\" INTEGER" +
+                        "\"ectsProjectDH\" INTEGER," +
+                        "\"ectsProjectW\" INTEGER," +
                         "\"ectsPortfolioN\" INTEGER," +
-                        "\"ectsPortfolioH\" INTEGER," +
-                        "\"ectsPortfolioW\" INTEGER" +
+                        "\"ectsPortfolioDH\" INTEGER," +
+                        "\"ectsPortfolioW\" INTEGER," +
                         "\"ectsWorkshopN\" INTEGER," +
-                        "\"ectsWorkshopH\" INTEGER," +
-                        "\"ectsWorkshopW\" INTEGER" +
+                        "\"ectsWorkshopDH\" INTEGER," +
+                        "\"ectsWorkshopW\" INTEGER," +
                         "\"ectsOralexamN\" INTEGER," +
-                        "\"ectsOralexamH\" INTEGER," +
-                        "\"ectsOralexamW\" INTEGER" +
+                        "\"ectsOralexamDH\" INTEGER," +
+                        "\"ectsOralexamW\" INTEGER," +
                         "\"ectsMidtermN\" INTEGER," +
-                        "\"ectsMidtermH\" INTEGER," +
-                        "\"ectsMidtermW\" INTEGER" +
+                        "\"ectsMidtermDH\" INTEGER," +
+                        "\"ectsMidtermW\" INTEGER," +
                         "\"ectsFinalN\" INTEGER," +
-                        "\"ectsFinalH\" INTEGER," +
+                        "\"ectsFinalDH\" INTEGER," +
                         "\"ectsFinalW\" INTEGER)";
 
 
@@ -201,14 +201,6 @@ public class DBConnector {
                 stmt.executeUpdate(CREATE_WORKLOAD_TABLE);
                 stmt.executeUpdate(CREATE_COURSE_OUTCOME_TABLE);
             }
-
-            /*insertCourseMainTable = connection.prepareStatement("INSERT INTO CourseMainTable (changeDate,changeReason,Course_id,Course_WeeklySchedule_id,Course_AssestmentTable_id,Course_EctsTable_id,Course_OutcomeTable_id) VALUES (?,?,?,?,?,?,?)");
-            insertCourseInformationTable = connection.prepareStatement("INSERT INTO CourseInformationTable (Course_id, Information_id, courseName, codeFallSpringTheory, application, localCredits, ects, prerequisites, courseLanguage, courseType, courseLevel, modeOfDelivery, teachingMethodsAndTechniques, courseCoordinator, courseLecturers, assistants, courseObjectives, learningOutcomes, courseDescription, courseCategory, Theory, Lab,version) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)");
-            insertCourseAssessmentTable = connection.prepareStatement("INSERT INTO CourseAssessmentTable (assessment_id,assesParticipN,assesParticipW,assesParticipLO,assesLabN,assesLabW,assesLabLO,assesFiledN,assesFiledW,assesFiledLO,assesQuizN,assesQuizW,assesQuizLO,assesHomewN,assesHomewW,assesHomewLO,assesPresentN,assesPresentW,assesPresentLO,assesProjectN,assesProjectW,assesProjectLO,assesPortfolN,assesPortfolW,assesPortfolLO,assesWorkshN,assesWorkshW,assesWorkshLO,assesOraleN,assesOraleW,assesOraleLO,assesMidtN,assesMidtW,assesMidtLO,assesFinalN,assesFinalW,assesFinalLO,assesWeightofSemesterN,assesWeightofSemesterW,assesWeightofSemesterLO,assesWeightofEndofSemesterN,assesWeightofEndofSemesterW,assesWeightofEndofSemesterLO,version) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-            insertCourseWorkloadTable = connection.prepareStatement("INSERT INTO CourseWorkloadTable (workload_id,ectsCoursehourN, ectsCoursehourDH, ectsCoursehourW,ectsLabhourN, ectsLabhourDH, ectsLabhourW,ectsStudyhourN, ectsStudyhourDH, ectsStudyhourW,ectsFieldworkN, ectsFieldworkDH, ectsFieldworkW,ectsQuizN, ectsQuizDH, ectsQuizW,ectsHomeworkN, ectsHomeworkDH, ectsHomeworkW,ectsPresentationN, ectsPresentationDH, ectsPresentationW,ectsProjectN, ectsProjectDH, ectsProjectW,ectsPortfolioN, ectsPortfolioDH, ectsPortfolioW,ectsWorkshopN, ectsWorkshopDH, ectsWorkshopW,ectsOralexamN, ectsOralexamDH, ectsOralexamW,ectsMidtermN, ectsMidtermDH, ectsMidtermW,ectsFinalN, ectsFinalDH, ectsFinalW,version) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            insertCourseWeeklySchedule = connection.prepareStatement("INSERT INTO CourseWeeklySchedule (schedule_id,weeklysub_1sub, weeklysub_1req,weeklysub_2sub, weeklysub_2req,weeklysub_3sub, weeklysub_3req,weeklysub_4sub, weeklysub_4req,weeklysub_5sub, weeklysub_5req,weeklysub_6sub, weeklysub_6req,weeklysub_7sub, weeklysub_7req,weeklysub_8sub, weeklysub_8req,weeklysub_9sub, weeklysub_9req,weeklysub_10sub, weeklysub_10req,weeklysub_11sub, weeklysub_11req,weeklysub_12sub, weeklysub_12req,weeklysub_13sub, weeklysub_13req,weeklysub_14sub, weeklysub_14req,weeklysub_15sub, weeklysub_15req,weeklysub_16sub, weeklysub_16req,weeklysub_coursenotes, weeklysub_suggmat,version) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?)");
-            */
-
         } catch (ClassNotFoundException | SQLException e) {
             System.err.println(e);
         }
@@ -322,7 +314,7 @@ public class DBConnector {
     }
     public void addCourseAssessmentTable(Syllabus syllabus) {
         try {
-            int assessment_id ;
+            int assessment_id = 0;
             int assesParticipN = syllabus.AssesParticip_N;
             int assesParticipW = syllabus.AssesParticip_W;
             int assesParticipLO = syllabus.AssesParticip_LO;
@@ -367,7 +359,7 @@ public class DBConnector {
             int assesWeightofEndofSemesterLO = syllabus.AssesWeightingofEndofSemesterActivitiesontheFinalGrade_LO;
 
             PreparedStatement insertCourseAssessmentTable = connection.prepareStatement("INSERT INTO CourseAssessmentTable (assessment_id,assesParticipN,assesParticipW,assesParticipLO,assesLabN,assesLabW,assesLabLO,assesFiledN,assesFiledW,assesFiledLO,assesQuizN,assesQuizW,assesQuizLO,assesHomewN,assesHomewW,assesHomewLO,assesPresentN,assesPresentW,assesPresentLO,assesProjectN,assesProjectW,assesProjectLO,assesPortfolN,assesPortfolW,assesPortfolLO,assesWorkshN,assesWorkshW,assesWorkshLO,assesOraleN,assesOraleW,assesOraleLO,assesMidtN,assesMidtW,assesMidtLO,assesFinalN,assesFinalW,assesFinalLO,assesWeightofSemesterN,assesWeightofSemesterW,assesWeightofSemesterLO,assesWeightofEndofSemesterN,assesWeightofEndofSemesterW,assesWeightofEndofSemesterLO) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-            //insertCourseAssessmentTable.setInt(1, assessment_id); probabaly will not be used
+            insertCourseAssessmentTable.setInt(1, assessment_id);
             insertCourseAssessmentTable.setInt(2, assesParticipN);
             insertCourseAssessmentTable.setInt(3, assesParticipW);
             insertCourseAssessmentTable.setInt(4, assesParticipLO);
@@ -420,7 +412,7 @@ public class DBConnector {
     }
     public void addCourseWorkloadTable(Syllabus syllabus) {
         try {
-            int workload_id;
+            int workload_id = 0;
             int ectsCoursehourN = syllabus.WLTableCoursehours_N;
             int ectsCoursehourDH = syllabus.WLTableCoursehours_DH;
             int ectsCoursehourW = syllabus.WLTableCoursehours_W;
@@ -463,7 +455,7 @@ public class DBConnector {
 
             PreparedStatement insertCourseWorkloadTable = connection.prepareStatement("INSERT INTO CourseWorkloadTable (workload_id,ectsCoursehourN, ectsCoursehourDH, ectsCoursehourW,ectsLabhourN, ectsLabhourDH, ectsLabhourW,ectsStudyhourN, ectsStudyhourDH, ectsStudyhourW,ectsFieldworkN, ectsFieldworkDH, ectsFieldworkW,ectsQuizN, ectsQuizDH, ectsQuizW,ectsHomeworkN, ectsHomeworkDH, ectsHomeworkW,ectsPresentationN, ectsPresentationDH, ectsPresentationW,ectsProjectN, ectsProjectDH, ectsProjectW,ectsPortfolioN, ectsPortfolioDH, ectsPortfolioW,ectsWorkshopN, ectsWorkshopDH, ectsWorkshopW,ectsOralexamN, ectsOralexamDH, ectsOralexamW,ectsMidtermN, ectsMidtermDH, ectsMidtermW,ectsFinalN, ectsFinalDH, ectsFinalW) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-            /*insertCourseWorkloadTable.setInt(1, workload_id);*/
+            insertCourseWorkloadTable.setInt(1, workload_id);
             insertCourseWorkloadTable.setInt(2, ectsCoursehourN);
             insertCourseWorkloadTable.setInt(3, ectsCoursehourDH);
             insertCourseWorkloadTable.setInt(4, ectsCoursehourW);
@@ -512,7 +504,7 @@ public class DBConnector {
     }
     public void addCourseWeeklySchedule(Syllabus syllabus) {
         try {
-            int schedule_id ;
+            int schedule_id = 0;
 
             String weeklysub_1sub = syllabus.W1sub;
             String weeklysub_1req = syllabus.W1req;
@@ -551,7 +543,7 @@ public class DBConnector {
 
             PreparedStatement insertCourseWeeklySchedule = connection.prepareStatement("INSERT INTO CourseWeeklySchedule (schedule_id,weeklysub_1sub, weeklysub_1req,weeklysub_2sub, weeklysub_2req,weeklysub_3sub, weeklysub_3req,weeklysub_4sub, weeklysub_4req,weeklysub_5sub, weeklysub_5req,weeklysub_6sub, weeklysub_6req,weeklysub_7sub, weeklysub_7req,weeklysub_8sub, weeklysub_8req,weeklysub_9sub, weeklysub_9req,weeklysub_10sub, weeklysub_10req,weeklysub_11sub, weeklysub_11req,weeklysub_12sub, weeklysub_12req,weeklysub_13sub, weeklysub_13req,weeklysub_14sub, weeklysub_14req,weeklysub_15sub, weeklysub_15req,weeklysub_16sub, weeklysub_16req,weeklysub_coursenotes, weeklysub_suggmat) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?)");
 
-            /*insertCourseWeeklySchedule.setInt(1, schedule_id);*/
+            insertCourseWeeklySchedule.setInt(1, schedule_id);
             insertCourseWeeklySchedule.setString(2, weeklysub_1sub);
             insertCourseWeeklySchedule.setString(3, weeklysub_1req);
             insertCourseWeeklySchedule.setString(4, weeklysub_2sub);
@@ -607,18 +599,4 @@ public class DBConnector {
             System.err.println(e);
         }
     }
-
-    public void addSyllabus(Syllabus syllabus) {
-        /*try {
-            addCourseMainTable(syllabus);
-            addCourseInformationTable(syllabus);
-            addCourseAssessmentTable(syllabus);
-            addCourseWorkloadTable(syllabus);
-            addCourseWeeklySchedule(syllabus);
-            addCourseOutcomeTable(syllabus);
-        } catch (Exception e) {
-            System.err.println(e);
-        }*/
-    }
-
 }

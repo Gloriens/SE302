@@ -1192,6 +1192,7 @@ public class CreateSyllabusController implements Initializable {
             DBConnector.getInstance().addCourseAssessmentTable(newSyllabus);
             DBConnector.getInstance().addCourseWorkloadTable(newSyllabus);
             DBConnector.getInstance().addCourseMainTable(newSyllabus);
+            DBConnector.getInstance().addCourseOutcomeTable(++numberOfOutcomes, LO_TextF_GeneralInf.getText(), programCompetencies_TextF_CourseOutcomes.getText(), outcomematix_contributionlevel());
 
         }
 
