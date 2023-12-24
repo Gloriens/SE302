@@ -1,2 +1,5 @@
 # Syllabus Versioning System
-Coming soon
+Our software is designed to efficiently manage and organize educational content by providing a robust platform for storing and creating syllabuses. With our user-friendly interface, educators can easily input, update, and organize course materials, ensuring seamless syllabus creation. The software's advanced storage capabilities allow for the secure and accessible archiving of syllabuses, promoting collaboration among educators and facilitating easy retrieval when needed. By streamlining the syllabus creation process, our software aims to enhance the overall efficiency of educational institutions, providing a centralized solution for educators to develop and manage comprehensive course outlines.
+![302main](https://github.com/Gloriens/SE302/assets/79946895/a2492e6e-bdd0-4dbf-8af1-4223a5a20f54)
+![302crate_s](https://github.com/Gloriens/SE302/assets/79946895/918372f5-10e2-4c81-be46-ad5faf0772bc)
+![help302](https://github.com/Gloriens/SE302/assets/79946895/7823a9a8-f7cd-46c3-aa72-9d27ef2e7ed5)
