@@ -3,6 +3,8 @@ package com.example.syllabusmanager;
 import java.util.ArrayList;
 
 public class Syllabus {
+
+
     //section 1
 
     String GI_code;
@@ -314,5 +316,6 @@ public class Syllabus {
         this.WLTableFinal_DH = WLTableFinal_DH;
         this.WLTableFinal_W = WLTableFinal_W;
         this.outcomeMatrix = outcomeMatrix;
+
     }
 }

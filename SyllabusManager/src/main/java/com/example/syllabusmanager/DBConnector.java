@@ -585,15 +585,35 @@ public class DBConnector {
             System.err.println(e);
         }
     }
-    public void addCourseOutcomeTable(int version, String lo, String outcome, int contributionLevel) {
+    public void addCourseOutcomeTable(Syllabus syllabus) {
         try {
-            PreparedStatement insertCourseOutcomeTable = connection.prepareStatement("INSERT INTO CourseOutcomeTable (version,lo,outcome,contributionLevel) VALUES (?,?,?,?)");
-            insertCourseOutcomeTable.setInt(1, version);
-            insertCourseOutcomeTable.setString(2, lo);
-            insertCourseOutcomeTable.setString(3, outcome);
-            insertCourseOutcomeTable.setInt(4, contributionLevel);
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT MAX(version) AS last_version FROM CourseOutcomeTable");
 
-            insertCourseOutcomeTable.execute();
+            int version = 1;
+            int lastVersion = 0;
+// Process the result set
+            if (rs.next()) {
+                lastVersion = rs.getInt("last_version");
+
+                // Process the retrieved last version data
+                System.out.println("Last Inserted Version: " + lastVersion);
+
+            }
+            version = lastVersion + 1;
+
+            for (int i = 0; i < syllabus.outcomeMatrix.size(); i++) {
+
+                PreparedStatement insertCourseOutcomeTable = connection.prepareStatement("INSERT INTO CourseOutcomeTable (version, lo,outcome,contributionLevel) VALUES (?,?,?,?)");
+                insertCourseOutcomeTable.setInt(1, version);
+                insertCourseOutcomeTable.setString(2, syllabus.outcomeMatrix.get(i).LO);
+                insertCourseOutcomeTable.setString(3, syllabus.outcomeMatrix.get(i).outcomesTableView);
+                insertCourseOutcomeTable.setInt(4, syllabus.outcomeMatrix.get(i).contributionLevel);
+                insertCourseOutcomeTable.execute();
+            }
+
+
+
 
         } catch (Exception e) {
             System.err.println(e);

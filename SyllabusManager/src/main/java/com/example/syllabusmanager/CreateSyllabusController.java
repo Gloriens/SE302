@@ -514,7 +514,6 @@ public class CreateSyllabusController implements Initializable {
         if (!programCompetencies_TextF_CourseOutcomes.getText().isEmpty() &&
                 outcomematix_contributionlevel() != -1 &&
                 !LO_TextF_GeneralInf.getText().isEmpty()) {//numberofoutcomes yerine version girilicek
-            DBConnector.getInstance().addCourseOutcomeTable(1, LO_TextF_GeneralInf.getText(), programCompetencies_TextF_CourseOutcomes.getText(), outcomematix_contributionlevel());
 
 
             ProgramOutcomedata newData = new ProgramOutcomedata
@@ -1192,6 +1191,8 @@ public class CreateSyllabusController implements Initializable {
             DBConnector.getInstance().addCourseAssessmentTable(newSyllabus);
             DBConnector.getInstance().addCourseWorkloadTable(newSyllabus);
             DBConnector.getInstance().addCourseMainTable(newSyllabus);
+            DBConnector.getInstance().addCourseOutcomeTable(newSyllabus);
+
 
         }
 
