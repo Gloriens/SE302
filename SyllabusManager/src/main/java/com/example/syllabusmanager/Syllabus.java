@@ -25,6 +25,7 @@ public class Syllabus {
     String GI_learningoutcomes;
     int GI_coursecategory;
 
+
     //section 2
     String W1sub;
     String W1req;

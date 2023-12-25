@@ -26,7 +26,6 @@ import java.util.regex.Pattern;
 
 public class CreateSyllabusController implements Initializable {
 
-     //number of outcomes, it will be incremented after every successful "add" button action
     Alert a = new Alert(Alert.AlertType.NONE);
     Alert b = new Alert(Alert.AlertType.NONE);
     //General info
@@ -513,7 +512,7 @@ public class CreateSyllabusController implements Initializable {
 
         if (!programCompetencies_TextF_CourseOutcomes.getText().isEmpty() &&
                 outcomematix_contributionlevel() != -1 &&
-                !LO_TextF_GeneralInf.getText().isEmpty()) {//numberofoutcomes yerine version girilicek
+                !LO_TextF_GeneralInf.getText().isEmpty()) {
 
 
             ProgramOutcomedata newData = new ProgramOutcomedata

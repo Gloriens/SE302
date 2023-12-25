@@ -592,11 +592,11 @@ public class DBConnector {
 
             int version = 1;
             int lastVersion = 0;
-// Process the result set
+
             if (rs.next()) {
                 lastVersion = rs.getInt("last_version");
 
-                // Process the retrieved last version data
+
                 System.out.println("Last Inserted Version: " + lastVersion);
 
             }
@@ -613,10 +613,54 @@ public class DBConnector {
             }
 
 
-
-
         } catch (Exception e) {
             System.err.println(e);
         }
     }
+<<<<<<< Updated upstream
+=======
+
+    public MiniSyllabus SyllabusFromDatabase(int versionNumber) {
+
+        int targetVersion = versionNumber;
+
+        String selectMainTable = "SELECT * FROM CourseMainTable WHERE version = " + targetVersion;
+        int v = 0;
+        String cou = "";
+        try (Statement statement = connection.createStatement()) {
+
+            try (ResultSet resultSetInformation = statement.executeQuery(selectMainTable)) {
+                while (resultSetInformation.next()) {
+                    int version = resultSetInformation.getInt("version");
+                    String courseId = resultSetInformation.getString("Course_id");
+
+                    v = version;
+                    cou = courseId;
+                    System.out.println("Version: " + version);
+                    System.out.println("Course ID: " + courseId);
+
+                }
+            }
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        MiniSyllabus miniSyllabus = new MiniSyllabus(v, cou);
+        return miniSyllabus;
+    }
+
+    public ArrayList<MiniSyllabus> ListMiniSyllabuses () {
+        ArrayList<MiniSyllabus> miniList = new ArrayList<MiniSyllabus>();
+        for (int i = 0; i < 100; i++) {
+            try {
+                miniList.add(DBConnector.getInstance().SyllabusFromDatabase(i));
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+        return miniList;
+    }
+
+>>>>>>> Stashed changes
 }

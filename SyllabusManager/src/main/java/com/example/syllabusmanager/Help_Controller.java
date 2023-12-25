@@ -48,8 +48,13 @@ public class Help_Controller {
                 + "Select the contribution level (if applicable) and then click the 'Add' button. "
                 + "Once you're done, click 'Save' to save the syllabus.";
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
+<<<<<<< Updated upstream
         alert.setTitle("Add Button");
         alert.setHeaderText("How can I add CV?");
+=======
+        alert.setTitle("Create Syllabus");
+        alert.setHeaderText("How can I create Syllabus?");
+>>>>>>> Stashed changes
         alert.setContentText(helpText);
         alert.show();
 
@@ -58,9 +63,13 @@ public class Help_Controller {
     @FXML
     void helponImport() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
+<<<<<<< Updated upstream
         alert.setTitle("Delete Button");
         alert.setHeaderText("How can I delete CV?");
         alert.setContentText("To delete a CV, you should select a row on the table and \nthen click the delete button.");
+=======
+
+>>>>>>> Stashed changes
         alert.show();
 
     }
@@ -68,9 +77,12 @@ public class Help_Controller {
     @FXML
     void helponExport(){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
+<<<<<<< Updated upstream
         alert.setTitle("Edit Button");
         alert.setHeaderText("How can I edit CV?");
         alert.setContentText("To edit a CV, firstly, you need select a row from the \ntable, once a row selected, the information about that CV \nis printed in the boxes on the bottom. So, you can edit \nthe information in the boxes and then click edit when \nediting is done");
+=======
+>>>>>>> Stashed changes
         alert.show();
 
     }
